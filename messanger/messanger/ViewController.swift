@@ -62,8 +62,9 @@ func get_ts(url: String) -> String{
 //0000000 C L A S S 00000000000000000000000
 class ViewController: UIViewController, UITableViewDataSource {
     
-    var messagesList : [Int: String] = [:]
-    var ts: String = "1837157554"
+    var messagesList : [String] = []
+    var ts: String = "1837158783"
+    var ind = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -89,7 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
 /**/@IBAction func getMessages(_ sender: Any) {
     
-        self.ts = "1837158572"
+        //self.ts = "1837158783"
         //if self.ts == "1837157301" {print("**equal**")}
         print(self.ts)
 
@@ -109,15 +110,18 @@ class ViewController: UIViewController, UITableViewDataSource {
                 let n = json["response"]["messages"]["count"].intValue
                 print(" * n = \(n)")
                 
-                for i in 0..<n {
-                    /*wr*/self.messagesList[json["response"]["messages"]["items"][i]["from_id"].intValue] = json["response"]["messages"]["items"][i]["text"].stringValue
+                //for i in 0..<n
+                while (self.ind < n)
+                {
+                    /*wr*/self.messagesList.append(json["response"]["messages"]["items"][self.ind]["text"].stringValue)
+                    self.ind += 1
                 }
-                //      self.messagesList.appEnd(json1["response"]["messages"]["items"][1]["text"].stringValue)
+                
                 
                 print(self.messagesList)
                 
                 self.tableView.reloadData()
-
+                //      self.messagesList.appEnd(json1["response"]["messages"]["items"][1]["text"].stringValue)
             case .failure(let error):
                 print(error)
             }
@@ -138,7 +142,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = messagesList.first?.value
+            cell.textLabel?.text = messagesList[indexPath.row]
             return cell
         }
     
