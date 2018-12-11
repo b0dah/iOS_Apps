@@ -58,13 +58,15 @@ func get_ts(url: String) -> String{
     return result
 }
 
+
 //0000000 C L A S S 00000000000000000000000
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     
     var messagesList : [Int: String] = [:]
     var ts: String = "1837157554"
     
-    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
     /**/@IBAction func getTS(_ sender: Any) {
         let LongPollUrl = "https://api.vk.com/method/messages.getLongPollServer?need_pts=1&lp_version=3&v=5.92&access_token=\(AccessToken)"
         
@@ -87,7 +89,7 @@ class ViewController: UIViewController {
     
 /**/@IBAction func getMessages(_ sender: Any) {
     
-        self.ts = "1837157893"
+        self.ts = "1837158572"
         //if self.ts == "1837157301" {print("**equal**")}
         print(self.ts)
 
@@ -100,11 +102,10 @@ class ViewController: UIViewController {
             response in
             
             switch response.result {
+                
             case .success(let value):
                 let json = JSON(value)
-               
                 //              print("JSON: \(json)")
-                
                 let n = json["response"]["messages"]["count"].intValue
                 print(" * n = \(n)")
                 
@@ -114,6 +115,8 @@ class ViewController: UIViewController {
                 //      self.messagesList.appEnd(json1["response"]["messages"]["items"][1]["text"].stringValue)
                 
                 print(self.messagesList)
+                
+                self.tableView.reloadData()
 
             case .failure(let error):
                 print(error)
@@ -124,34 +127,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //------------------
-        //let url: String = "https://httpbin.org/get"
-        //var url: String = "https://api.vk.com/method/users.get?user_id=210700286&v=5.52"
-        //var url: String = "https://api.vk.com/method/messages.getHistory?user_id=bodah&v=5.52"
+        self.tableView.dataSource = self
         
-        
-       
-        
-                //..........................................
-        
-            /*mess*//*AF.request(LongPollHistoryUrl, method: .get).validate().responseJSON { // getting messages List
-                    response in
-                    switch response.result {
-                    case .success(let value1):
-                        let json1 = JSON(value1)
-                                //print("JSON: \(json1)")
-         
-                    case .failure(let error):
-                        print(error)
-                    }
-                }*/
-        
-        
-        //print(get_ts(url: LongPollUrl))
-        //print(getJSONvalue(url: LongPollUrl))
-        print(ts)
-    // Do any additional setup after loading the view, typically from a nib.
     }
+        //==== methods for table view
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return messagesList.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = messagesList.first?.value
+            return cell
+        }
+    
+        
+        
+        //print(ts)
+    // Do any additional setup after loading the view, typically from a nib.
+    
     
 }
 
