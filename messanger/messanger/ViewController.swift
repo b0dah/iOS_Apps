@@ -10,8 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let AccessToken = "feedf9c66b9b06093011790d823c82344bf7e12569c6c54acb482a16335875c9f5b32ed588a8a1186f28e"
-
+//let AccessToken = "feedf9c66b9b06093011790d823c82344bf7e12569c6c54acb482a16335875c9f5b32ed588a8a1186f28e"
+let AccessToken = "e27e3b2027a0669340127c4b6be131371ebb1b73506c9a709ede07756538f9cf9f9772c60daff19f00b3e"
 
 func getJSONvalue(url: String) -> JSON
 {
@@ -58,6 +58,26 @@ func get_ts(url: String) -> String{
     return result
 }
 
+func getNamewithID(id: String) -> String {
+    let Url = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
+    var name = ""
+    
+    AF.request(Url, method: .get).validate().responseJSON {
+        response in
+        
+        switch response.result {
+        case .success(let value):
+            let json = JSON(value)
+            
+            name = json["response"][0]["first_name"].stringValue
+
+        case .failure(let error):
+            print(error)
+        }
+    }
+    return name
+}
+
 
 //0000000 C L A S S 00000000000000000000000
 class ViewController: UIViewController, UITableViewDataSource {
@@ -85,19 +105,24 @@ class ViewController: UIViewController, UITableViewDataSource {
             print(error)
             }
         }
-        print("  * 1st func ends *   ")
+        print("name = ")
+        print(getNamewithID(id: "203674241"))
     }
+    
     
 /**/@IBAction func getMessages(_ sender: Any) {
     
         //self.ts = "1837158783"
         //if self.ts == "1837157301" {print("**equal**")}
-        print(self.ts)
+        //print(self.ts)
 
         var LongPollHistoryUrl = "https://api.vk.com/method/messages.getLongPollHistory?msgs_limit=210&v=5.92&access_token=\(AccessToken)"
-    
         LongPollHistoryUrl += "&ts=\(self.ts)"
-        print(LongPollHistoryUrl)
+        //print(LongPollHistoryUrl)
+    
+        let getProfileInfoUrl = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
+    
+    
         
         AF.request(LongPollHistoryUrl, method: .get).validate().responseJSON {
             response in
@@ -108,12 +133,20 @@ class ViewController: UIViewController, UITableViewDataSource {
                 let json = JSON(value)
                 //              print("JSON: \(json)")
                 let n = json["response"]["messages"]["count"].intValue
-                print(" * n = \(n)")
+                
                 
                 //for i in 0..<n
                 while (self.ind < n)
                 {
-                    /*wr*/self.messagesList.append(json["response"]["messages"]["items"][self.ind]["text"].stringValue)
+                //----- gettng name
+                    var name = ""
+                    
+                    AF.request(getProfileInfoUrl).responseJSON { response in
+                        let json_name: JSON = JSON(response)
+                        name = json_name["response"][0]["first_name"].stringValue
+                    }
+                //------getting name
+                    /*wr*/self.messagesList.append(/*name + "   :   " +*/ json["response"]["messages"]["items"][self.ind]["text"].stringValue)
                     self.ind += 1
                 }
                 
