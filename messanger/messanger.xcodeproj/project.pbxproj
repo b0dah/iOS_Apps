@@ -13,6 +13,7 @@
 		BC8B6C1A21B6AFC5006EC12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6C1821B6AFC5006EC12D /* Main.storyboard */; };
 		BC8B6C1C21B6AFC7006EC12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6C1B21B6AFC7006EC12D /* Assets.xcassets */; };
 		BC8B6C1F21B6AFC7006EC12D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6C1D21B6AFC7006EC12D /* LaunchScreen.storyboard */; };
+		BC8BC49C21C6D31C00EFF6D0 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BC8B6C1B21B6AFC7006EC12D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC8B6C1E21B6AFC7006EC12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC8B6C2021B6AFC7006EC12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		F7807E889FD0FEA2AC15DF7E /* Pods-messanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-messanger/Pods-messanger.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 			children = (
 				BC8B6C1421B6AFC5006EC12D /* AppDelegate.swift */,
 				BC8B6C1621B6AFC5006EC12D /* ViewController.swift */,
+				BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */,
 				BC8B6C1821B6AFC5006EC12D /* Main.storyboard */,
 				BC8B6C1B21B6AFC7006EC12D /* Assets.xcassets */,
 				BC8B6C1D21B6AFC7006EC12D /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8BC49C21C6D31C00EFF6D0 /* DialogViewController.swift in Sources */,
 				BC8B6C1721B6AFC5006EC12D /* ViewController.swift in Sources */,
 				BC8B6C1521B6AFC5006EC12D /* AppDelegate.swift in Sources */,
 			);

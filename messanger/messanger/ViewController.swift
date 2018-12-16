@@ -59,6 +59,8 @@ func get_ts(url: String) -> String{
 }
 
 func getNamewithID(id: String) -> String {
+    let queue = DispatchQueue(label: "com.cnoon.response-queue", qos: .utility, attributes: [.concurrent])
+    
     let Url = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
     var name = ""
     
@@ -68,13 +70,13 @@ func getNamewithID(id: String) -> String {
         switch response.result {
         case .success(let value):
             let json = JSON(value)
-            
+            print("aii **")
             name = json["response"][0]["first_name"].stringValue
-
+            
         case .failure(let error):
             print(error)
         }
-    }.resume()
+    }
     return name
 }
 
@@ -82,28 +84,7 @@ func getNamewithID(id: String) -> String {
 //0000000 C L A S S 00000000000000000000000
 class ViewController: UIViewController, UITableViewDataSource {
     
-    func getNamewithID(id: String) -> String {
-        let queue = DispatchQueue(label: "com.cnoon.response-queue", qos: .utility, attributes: [.concurrent])
-        
-        let Url = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
-        var name = ""
-        
-        AF.request(Url, method: .get).validate().responseJSON {
-            response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("aii **")
-                name = json["response"][0]["first_name"].stringValue
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-        return name
-    }
-    
+    var IDsList: [String] = []
     var messagesList : [String] = []
     var ts: String = "1837158783"
     var ind = 0
@@ -142,10 +123,6 @@ class ViewController: UIViewController, UITableViewDataSource {
 
         var LongPollHistoryUrl = "https://api.vk.com/method/messages.getLongPollHistory?msgs_limit=210&v=5.92&access_token=\(AccessToken)"
         LongPollHistoryUrl += "&ts=\(self.ts)"
-        //print(LongPollHistoryUrl)
-    
-        let getProfileInfoUrl = "https://api.vk.com/method/users.get?user_id=203674241&v=5.92&access_token=\(AccessToken)"
-        var name = ""
     
         
         AF.request(LongPollHistoryUrl, method: .get).validate().responseJSON {
@@ -161,23 +138,17 @@ class ViewController: UIViewController, UITableViewDataSource {
                 //for i in 0..<n
                 while (self.ind < n)
                 {
-                //----- gettng name
-                    
-                    //name = self.getNamewithID(id: "")
-                    
-                        //name = json["response"]["messages"]["items"][self.ind]["from_id"].stringValue
-                        name = json["response"]["profiles"][0]["first_name"].stringValue
+                    //----- gettng name
+                        self.IDsList.append(json["response"]["messages"]["items"][self.ind]["from_id"].stringValue)
+                        //name = json["response"]["profiles"][0]["first_name"].stringValue
                     //------getting name ends
-                    print("out of clos")
-                    /*wr*/self.messagesList.append(name + "   :   " + json["response"]["messages"]["items"][self.ind]["text"].stringValue)
+                    /*wr*/self.messagesList.append(json["response"]["messages"]["items"][self.ind]["text"].stringValue)
                     self.ind += 1
                 }
                 
-                
-                //print(self.messagesList)
-                
                 self.tableView.reloadData()
                 //      self.messagesList.appEnd(json1["response"]["messages"]["items"][1]["text"].stringValue)
+                
             case .failure(let error):
                 print(error)
             }
@@ -213,7 +184,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.tableView.dataSource = self
         
     }
-        //==== methods for table view
+    
+    
+    //==== methods for table view
     
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return messagesList.count
@@ -221,15 +194,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.detailTextLabel?.text = "id" + IDsList[indexPath.row]
             cell.textLabel?.text = messagesList[indexPath.row]
             return cell
         }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {  // передача значения при переходе (segue) между классами
         
-        
-        //print(ts)
+        if segue.identifier == "segue_to_dialog_ID" {
+            if let IndexPath = self.tableView.indexPathForSelectedRow {
+                var destination: DialogViewController = segue.destination as! DialogViewController // экз первого класса
+                destination.personID = IDsList[IndexPath.row]
+            }
+        }
+    }
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
 }
 
