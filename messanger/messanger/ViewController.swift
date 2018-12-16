@@ -10,13 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-//let AccessToken = "feedf9c66b9b06093011790d823c82344bf7e12569c6c54acb482a16335875c9f5b32ed588a8a1186f28e"
-let AccessToken = "e27e3b2027a0669340127c4b6be131371ebb1b73506c9a709ede07756538f9cf9f9772c60daff19f00b3e"
+let AccessToken = "feedf9c66b9b06093011790d823c82344bf7e12569c6c54acb482a16335875c9f5b32ed588a8a1186f28e"
+//let AccessToken = "e27e3b2027a0669340127c4b6be131371ebb1b73506c9a709ede07756538f9cf9f9772c60daff19f00b3e" // yota
 
 func getJSONvalue(url: String) -> JSON
 {
     //var result_has_got: Bool = false
     
+    //let url = "https://jsonplaceholder.typicode.com/posts"
     var result: JSON = JSON()
     
     AF.request(url, method: .get).validate().responseJSON {
@@ -31,8 +32,7 @@ func getJSONvalue(url: String) -> JSON
         case .failure(let error):
             print(error)
         }
-        return
-    }
+    }.resume()
     
 
     return result
@@ -74,7 +74,7 @@ func getNamewithID(id: String) -> String {
         case .failure(let error):
             print(error)
         }
-    }
+    }.resume()
     return name
 }
 
@@ -82,14 +82,38 @@ func getNamewithID(id: String) -> String {
 //0000000 C L A S S 00000000000000000000000
 class ViewController: UIViewController, UITableViewDataSource {
     
+    func getNamewithID(id: String) -> String {
+        let queue = DispatchQueue(label: "com.cnoon.response-queue", qos: .utility, attributes: [.concurrent])
+        
+        let Url = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
+        var name = ""
+        
+        AF.request(Url, method: .get).validate().responseJSON {
+            response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("aii **")
+                name = json["response"][0]["first_name"].stringValue
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        return name
+    }
+    
     var messagesList : [String] = []
     var ts: String = "1837158783"
     var ind = 0
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     /**/@IBAction func getTS(_ sender: Any) {
-        let LongPollUrl = "https://api.vk.com/method/messages.getLongPollServer?need_pts=1&lp_version=3&v=5.92&access_token=\(AccessToken)"
+        /*let LongPollUrl = "https://api.vk.com/method/messages.getLongPollServer?need_pts=1&lp_version=3&v=5.92&access_token=\(AccessToken)"
+        
         
         AF.request(LongPollUrl, method: .get).validate().responseJSON { // gettin ts
          response in
@@ -106,7 +130,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
         }
         print("name = ")
-        print(getNamewithID(id: "203674241"))
+        //print(getNamewithID(id: "203674241")) */
     }
     
     
@@ -120,8 +144,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         LongPollHistoryUrl += "&ts=\(self.ts)"
         //print(LongPollHistoryUrl)
     
-        let getProfileInfoUrl = "https://api.vk.com/method/users.get?user_id=210700286&v=5.92&access_token=\(AccessToken)"
-    
+        let getProfileInfoUrl = "https://api.vk.com/method/users.get?user_id=203674241&v=5.92&access_token=\(AccessToken)"
+        var name = ""
     
         
         AF.request(LongPollHistoryUrl, method: .get).validate().responseJSON {
@@ -134,24 +158,23 @@ class ViewController: UIViewController, UITableViewDataSource {
                 //              print("JSON: \(json)")
                 let n = json["response"]["messages"]["count"].intValue
                 
-                
                 //for i in 0..<n
                 while (self.ind < n)
                 {
                 //----- gettng name
-                    var name = ""
                     
-                    AF.request(getProfileInfoUrl).responseJSON { response in
-                        let json_name: JSON = JSON(response)
-                        name = json_name["response"][0]["first_name"].stringValue
-                    }
-                //------getting name
-                    /*wr*/self.messagesList.append(/*name + "   :   " +*/ json["response"]["messages"]["items"][self.ind]["text"].stringValue)
+                    //name = self.getNamewithID(id: "")
+                    
+                        //name = json["response"]["messages"]["items"][self.ind]["from_id"].stringValue
+                        name = json["response"]["profiles"][0]["first_name"].stringValue
+                    //------getting name ends
+                    print("out of clos")
+                    /*wr*/self.messagesList.append(name + "   :   " + json["response"]["messages"]["items"][self.ind]["text"].stringValue)
                     self.ind += 1
                 }
                 
                 
-                print(self.messagesList)
+                //print(self.messagesList)
                 
                 self.tableView.reloadData()
                 //      self.messagesList.appEnd(json1["response"]["messages"]["items"][1]["text"].stringValue)
@@ -164,6 +187,29 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ////////////
+        let LongPollUrl = "https://api.vk.com/method/messages.getLongPollServer?need_pts=1&lp_version=3&v=5.92&access_token=\(AccessToken)"
+        
+        
+        AF.request(LongPollUrl, method: .get).validate().responseJSON { // gettin ts
+            response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                //print("JSON: \(json)")
+                print("  * inside 1st closure *   ")
+                self.ts = json["response"]["ts"].stringValue
+                print("  * got zz\(self.ts)zz")
+            case .failure(let error):
+                print(error)
+            }
+        }
+        print("name = ")
+        //print(getNamewithID(id: "203674241"))
+        /////////////////////////////////////////////
+        
         self.tableView.dataSource = self
         
     }
