@@ -26,7 +26,8 @@ class DialogViewController: UIViewController, UITableViewDataSource {
     
     var personID = ""
     var DialogMessagesList : [String] = []
-    var random_id: Int = 0
+    var DialogInOrOut : [Bool] = []
+
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
@@ -40,13 +41,22 @@ class DialogViewController: UIViewController, UITableViewDataSource {
         if let encoded = sendMessageUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), // перевод в новую кодировкцу
             let url = URL(string: encoded) { AF.request(url) }  //          AF.request(url)
         
+        //------ refreshing when sent smt new ----------
+            DialogMessagesList.insert(messageText, at: 0)
+            DialogInOrOut.insert(true, at: 0)
+             self.tableView.reloadData()
+        //------- refreshing cancelled
         messageTextField.text = ""
+        
+        
     }
 
     
     /**/override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.title = String("id"+personID)
         
         /* getting name
         let Url = "https://api.vk.com/method/users.get?user_id=\(personID)&v=5.92&access_token=\(AccessToken)"
@@ -77,6 +87,8 @@ class DialogViewController: UIViewController, UITableViewDataSource {
                 //print("JSON: \(json)")
                 
                 for i in 0..<json["response"]["items"].count {
+                    
+                    self.DialogInOrOut.append(json["response"]["items"][i]["out"].boolValue)
                     self.DialogMessagesList.append(json["response"]["items"][i]["text"].stringValue)
                 }
                 self.tableView.reloadData()
@@ -111,8 +123,16 @@ class DialogViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_for_message_ID", for: indexPath)
-        cell.detailTextLabel?.text =  DialogMessagesList[indexPath.row]
-        cell.textLabel?.text = "" //id" + IDsList[indexPath.row
+        
+        if DialogInOrOut[indexPath.row] { // если исходящее сообщение
+            cell.detailTextLabel?.text =  DialogMessagesList[indexPath.row]
+            cell.textLabel?.text = "" //id" + IDsList[indexPath.row
+        }
+        else
+        {
+            cell.detailTextLabel?.text = "" // входящее
+            cell.textLabel?.text = DialogMessagesList[indexPath.row]
+        }
         return cell
     }
 
