@@ -14,6 +14,8 @@
 		BC8B6C1C21B6AFC7006EC12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6C1B21B6AFC7006EC12D /* Assets.xcassets */; };
 		BC8B6C1F21B6AFC7006EC12D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6C1D21B6AFC7006EC12D /* LaunchScreen.storyboard */; };
 		BC8BC49C21C6D31C00EFF6D0 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */; };
+		BC8BC49E21C9899000EFF6D0 /* ExperimentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BC49D21C9899000EFF6D0 /* ExperimentalViewController.swift */; };
+		BCC2FD7221DC159D0002CBB3 /* LONGPOLLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2FD7121DC159D0002CBB3 /* LONGPOLLViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		BC8B6C1E21B6AFC7006EC12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC8B6C2021B6AFC7006EC12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		BC8BC49D21C9899000EFF6D0 /* ExperimentalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalViewController.swift; sourceTree = "<group>"; };
+		BCC2FD7121DC159D0002CBB3 /* LONGPOLLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LONGPOLLViewController.swift; sourceTree = "<group>"; };
 		F7807E889FD0FEA2AC15DF7E /* Pods-messanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-messanger/Pods-messanger.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 				BC8B6C1621B6AFC5006EC12D /* ViewController.swift */,
 				BC8BC49B21C6D31C00EFF6D0 /* DialogViewController.swift */,
 				BC8B6C1821B6AFC5006EC12D /* Main.storyboard */,
+				BCC2FD7121DC159D0002CBB3 /* LONGPOLLViewController.swift */,
+				BC8BC49D21C9899000EFF6D0 /* ExperimentalViewController.swift */,
 				BC8B6C1B21B6AFC7006EC12D /* Assets.xcassets */,
 				BC8B6C1D21B6AFC7006EC12D /* LaunchScreen.storyboard */,
 				BC8B6C2021B6AFC7006EC12D /* Info.plist */,
@@ -170,6 +176,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-messanger/Pods-messanger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -177,6 +190,13 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8BC49E21C9899000EFF6D0 /* ExperimentalViewController.swift in Sources */,
+				BCC2FD7221DC159D0002CBB3 /* LONGPOLLViewController.swift in Sources */,
 				BC8BC49C21C6D31C00EFF6D0 /* DialogViewController.swift in Sources */,
 				BC8B6C1721B6AFC5006EC12D /* ViewController.swift in Sources */,
 				BC8B6C1521B6AFC5006EC12D /* AppDelegate.swift in Sources */,

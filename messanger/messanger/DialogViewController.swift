@@ -27,6 +27,7 @@ class DialogViewController: UIViewController, UITableViewDataSource {
     var personID = ""
     var DialogMessagesList : [String] = []
     var DialogInOrOut : [Bool] = []
+    var dest = ""
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -38,7 +39,7 @@ class DialogViewController: UIViewController, UITableViewDataSource {
         
         let sendMessageUrl = "https://api.vk.com/method/messages.send?user_id=\(personID)&message=\(messageText)&v=5.38&access_token=\(AccessToken)"
         
-        if let encoded = sendMessageUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), // перевод в новую кодировкцу
+        if let encoded = sendMessageUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), // перевод в новую кодировку
             let url = URL(string: encoded) { AF.request(url) }  //          AF.request(url)
         
         //------ refreshing when sent smt new ----------
@@ -55,65 +56,107 @@ class DialogViewController: UIViewController, UITableViewDataSource {
     /**/override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        var fb_messages_in_dialog_IDs_List : [String] = []
         
-        self.title = String("id"+personID)
-        
-        /* getting name
-        let Url = "https://api.vk.com/method/users.get?user_id=\(personID)&v=5.92&access_token=\(AccessToken)"
-        
-        AF.request(Url, method: .get).validate().responseJSON {
-            response in
+        switch dest {
+        case "fb":
+        // receiving mess IDs
+            /*let fb_dialog_url = "https://graph.facebook.com/t_108847693502996?fields=messages&access_token=\(fb_AccessToken)"
             
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
+            AF.request(fb_dialog_url, method: .get).validate().responseJSON { // gettin dialog
+                response in
                 
-                let name: String = json["response"][0]["first_name"].stringValue
-                self.title = name
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }*/
-        
-        let getDialogMessagesUrl =  "https://api.vk.com/method/messages.getHistory?user_id=\(personID)&count=50&v=5.92&access_token=\(AccessToken)"
-        AF.request(getDialogMessagesUrl, method: .get).validate().responseJSON {
-            response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                //print("JSON: \(json)")
-                
-                for i in 0..<json["response"]["items"].count {
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
                     
-                    self.DialogInOrOut.append(json["response"]["items"][i]["out"].boolValue)
-                    self.DialogMessagesList.append(json["response"]["items"][i]["text"].stringValue)
+                    //self.last_ID = json["messages"]["data"][0]["id"].stringValue
+                    for i in 0..<json["messages"]["data"].count  {
+                        fb_messages_in_dialog_IDs_List.append(json["messages"]["data"][i]["id"].stringValue)
+                    }
+                    self.title = json["id"].stringValue
+                    
+                    print("ARRAY")
+                    print(fb_messages_in_dialog_IDs_List)
+                case .failure(let error):
+                    print(error)
                 }
-                self.tableView.reloadData()
+           } */
+        // receiving messages
             
-            case .failure(let error):
-                print(error)
+            for i in FB_IDs {
+                let getting_fb_mess_url = "https://graph.facebook.com/\(i)?fields=message&access_token=\(fb_AccessToken)"
+            
+                AF.request(getting_fb_mess_url, method: .get).validate().responseJSON { // gettin dialog
+                    response in
+                    
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        
+                        
+                        self.DialogMessagesList.append(json["message"].stringValue)
+                        self.DialogInOrOut.append(true)
+                        
+                        self.tableView.reloadData()
+                        
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+                
+                self.tableView.dataSource = self
             }
-        }
+            
+            
+        default: // vk
+            
+            let getDialogMessagesUrl =  "https://api.vk.com/method/messages.getHistory?user_id=\(personID)&count=50&v=5.92&access_token=\(AccessToken)"
+            AF.request(getDialogMessagesUrl, method: .get).validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    //print("JSON: \(json)")
+                    
+                    for i in 0..<json["response"]["items"].count {
+                        
+                        self.DialogInOrOut.append(json["response"]["items"][i]["out"].boolValue)
+                        self.DialogMessagesList.append(json["response"]["items"][i]["text"].stringValue)
+                    }
+                    self.tableView.reloadData()
+                
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        //getting sender name
+            var sender_name = ""
+            let getting_name_url = "https://api.vk.com/method/users.get?user_id=\(personID)&v=5.92&access_token=\(AccessToken)"
+            
+            AF.request(getting_name_url, method: .get).validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    //print("JSON: \(json)")
+                    //print(json["response"][0]["first_name"].stringValue)
+                     sender_name = (json["response"][0]["first_name"].stringValue)
+                    self.title = String(sender_name)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+    }
+    //-------------------
         self.tableView.dataSource = self
         
     // hiding keyboard
         self.hideKeyboardWhenTappedAround()
-
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
 //==== methods for table view
