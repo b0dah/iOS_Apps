@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     @IBAction func drawButton(_ sender: UIButton) {
         let count = Int(arc4random_uniform(20) + 3)
-        setChartValues(count)
+        setChartValues()
     }
     
    
@@ -58,14 +58,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func setChartValues(_ count : Int = 20) {
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(UInt32(count)) + 3)
-            return ChartDataEntry(x: Double(i), y: val)
+
+//==================================================================
+    func setChartValues() {
+        
+        lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+        let numberOfPoints = 100
+        var x_coord = 0.0
+        
+        var DataEntry = [ChartDataEntry]()
+        
+        for i in 0..<numberOfPoints {
+            let point = ChartDataEntry(x: Double(x_coord), y: Double(cos(x_coord)))
+            x_coord += 0.1
+            
+            DataEntry.append(point)
         }
         
-        let set1 = LineChartDataSet(values: values, label: "DataSet 1")
+        let set1 = LineChartDataSet(values: DataEntry, label: "DataSet 1")
+        set1.colors = ChartColorTemplates.vordiplom()
+        
         let data = LineChartData(dataSet: set1)
         
         self.lineChartView.data = data
