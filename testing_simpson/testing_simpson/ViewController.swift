@@ -82,6 +82,13 @@ func RungheSchema(h: inout Double){
 }
 
 class ViewController: UIViewController {
+    
+    func buttonsParametrs(obj: UIButton) {
+        
+        obj.layer.cornerRadius = 10
+        obj.clipsToBounds = true
+        
+    }
 
     @IBOutlet weak var EpsField: UITextField!
     @IBOutlet weak var AField: UITextField!
@@ -91,6 +98,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var StepLabel: UILabel!
     
     @IBAction func SolveButton(_ sender: UIButton) {
+        sender.layer.cornerRadius = 15
+        sender.clipsToBounds = true
+        
         
         a = Double(AField.text!) ?? 0
         b = Double(BField.text!) ?? 1
@@ -106,6 +116,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
         self.hideKeyboardWhenTappedAround()
     }
 
