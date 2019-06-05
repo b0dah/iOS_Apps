@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lineChartView: LineChartView!
     
     @IBAction func drawButton(_ sender: UIButton) {
-        let count = Int(arc4random_uniform(20) + 3)
+        //let count = Int(arc4random_uniform(20) + 3)
         setChartValues()
     }
     

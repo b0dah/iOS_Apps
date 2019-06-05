@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BBCD633905451CA42C6F129 /* Pods_NM_BoundaryValueProblemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D857C6FB60081A0D6CF0C39 /* Pods_NM_BoundaryValueProblemUITests.framework */; };
+		6418C3E653ACAD414A2184F5 /* Pods_NM_BoundaryValueProblem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A372AAAAB71F2FAD2ACC683 /* Pods_NM_BoundaryValueProblem.framework */; };
+		BC0DDCDD22A63E6A009506C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DDCDC22A63E6A009506C4 /* AppDelegate.swift */; };
+		BC0DDCDF22A63E6A009506C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DDCDE22A63E6A009506C4 /* ViewController.swift */; };
+		BC0DDCE222A63E6A009506C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0DDCE022A63E6A009506C4 /* Main.storyboard */; };
+		BC0DDCE422A63E6C009506C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0DDCE322A63E6C009506C4 /* Assets.xcassets */; };
+		BC0DDCE722A63E6C009506C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0DDCE522A63E6C009506C4 /* LaunchScreen.storyboard */; };
+		BC0DDCF222A63E6C009506C4 /* NM_BoundaryValueProblemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DDCF122A63E6C009506C4 /* NM_BoundaryValueProblemUITests.swift */; };
+		BC19C33D22A78A7D00FCC618 /* SolveBoundaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19C33C22A78A7C00FCC618 /* SolveBoundaryValue.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC0DDCEE22A63E6C009506C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0DDCD122A63E6A009506C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC0DDCD822A63E6A009506C4;
+			remoteInfo = NM_BoundaryValueProblem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D857C6FB60081A0D6CF0C39 /* Pods_NM_BoundaryValueProblemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NM_BoundaryValueProblemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61AAE9EBF73C86603D826281 /* Pods-NM_BoundaryValueProblem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NM_BoundaryValueProblem.debug.xcconfig"; path = "Target Support Files/Pods-NM_BoundaryValueProblem/Pods-NM_BoundaryValueProblem.debug.xcconfig"; sourceTree = "<group>"; };
+		9A372AAAAB71F2FAD2ACC683 /* Pods_NM_BoundaryValueProblem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NM_BoundaryValueProblem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3EE685C6AF13BAE3161F8A7 /* Pods-NM_BoundaryValueProblemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NM_BoundaryValueProblemUITests.release.xcconfig"; path = "Target Support Files/Pods-NM_BoundaryValueProblemUITests/Pods-NM_BoundaryValueProblemUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC0DDCD922A63E6A009506C4 /* NM_BoundaryValueProblem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NM_BoundaryValueProblem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0DDCDC22A63E6A009506C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC0DDCDE22A63E6A009506C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC0DDCE122A63E6A009506C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC0DDCE322A63E6C009506C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC0DDCE622A63E6C009506C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC0DDCE822A63E6C009506C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC0DDCED22A63E6C009506C4 /* NM_BoundaryValueProblemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NM_BoundaryValueProblemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0DDCF122A63E6C009506C4 /* NM_BoundaryValueProblemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NM_BoundaryValueProblemUITests.swift; sourceTree = "<group>"; };
+		BC0DDCF322A63E6D009506C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC19C33C22A78A7C00FCC618 /* SolveBoundaryValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveBoundaryValue.swift; sourceTree = "<group>"; };
+		CD82897C023BAA7498AAD953 /* Pods-NM_BoundaryValueProblemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NM_BoundaryValueProblemUITests.debug.xcconfig"; path = "Target Support Files/Pods-NM_BoundaryValueProblemUITests/Pods-NM_BoundaryValueProblemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7203ACE0BFE3FE23A402FDF /* Pods-NM_BoundaryValueProblem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NM_BoundaryValueProblem.release.xcconfig"; path = "Target Support Files/Pods-NM_BoundaryValueProblem/Pods-NM_BoundaryValueProblem.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC0DDCD622A63E6A009506C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6418C3E653ACAD414A2184F5 /* Pods_NM_BoundaryValueProblem.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC0DDCEA22A63E6C009506C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BBCD633905451CA42C6F129 /* Pods_NM_BoundaryValueProblemUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1195F20FB2A098E0A75488AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A372AAAAB71F2FAD2ACC683 /* Pods_NM_BoundaryValueProblem.framework */,
+				1D857C6FB60081A0D6CF0C39 /* Pods_NM_BoundaryValueProblemUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D1E14E34A86A1237EEB911F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61AAE9EBF73C86603D826281 /* Pods-NM_BoundaryValueProblem.debug.xcconfig */,
+				E7203ACE0BFE3FE23A402FDF /* Pods-NM_BoundaryValueProblem.release.xcconfig */,
+				CD82897C023BAA7498AAD953 /* Pods-NM_BoundaryValueProblemUITests.debug.xcconfig */,
+				A3EE685C6AF13BAE3161F8A7 /* Pods-NM_BoundaryValueProblemUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC0DDCD022A63E6A009506C4 = {
+			isa = PBXGroup;
+			children = (
+				BC0DDCDB22A63E6A009506C4 /* NM_BoundaryValueProblem */,
+				BC0DDCF022A63E6C009506C4 /* NM_BoundaryValueProblemUITests */,
+				BC0DDCDA22A63E6A009506C4 /* Products */,
+				5D1E14E34A86A1237EEB911F /* Pods */,
+				1195F20FB2A098E0A75488AA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC0DDCDA22A63E6A009506C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC0DDCD922A63E6A009506C4 /* NM_BoundaryValueProblem.app */,
+				BC0DDCED22A63E6C009506C4 /* NM_BoundaryValueProblemUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC0DDCDB22A63E6A009506C4 /* NM_BoundaryValueProblem */ = {
+			isa = PBXGroup;
+			children = (
+				BC0DDCDC22A63E6A009506C4 /* AppDelegate.swift */,
+				BC0DDCDE22A63E6A009506C4 /* ViewController.swift */,
+				BC19C33C22A78A7C00FCC618 /* SolveBoundaryValue.swift */,
+				BC0DDCE022A63E6A009506C4 /* Main.storyboard */,
+				BC0DDCE322A63E6C009506C4 /* Assets.xcassets */,
+				BC0DDCE522A63E6C009506C4 /* LaunchScreen.storyboard */,
+				BC0DDCE822A63E6C009506C4 /* Info.plist */,
+			);
+			path = NM_BoundaryValueProblem;
+			sourceTree = "<group>";
+		};
+		BC0DDCF022A63E6C009506C4 /* NM_BoundaryValueProblemUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC0DDCF122A63E6C009506C4 /* NM_BoundaryValueProblemUITests.swift */,
+				BC0DDCF322A63E6D009506C4 /* Info.plist */,
+			);
+			path = NM_BoundaryValueProblemUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC0DDCD822A63E6A009506C4 /* NM_BoundaryValueProblem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC0DDCF622A63E6D009506C4 /* Build configuration list for PBXNativeTarget "NM_BoundaryValueProblem" */;
+			buildPhases = (
+				B6D7B4357B0C02AD4631824E /* [CP] Check Pods Manifest.lock */,
+				BC0DDCD522A63E6A009506C4 /* Sources */,
+				BC0DDCD622A63E6A009506C4 /* Frameworks */,
+				BC0DDCD722A63E6A009506C4 /* Resources */,
+				6235E096059013FC975B91C6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NM_BoundaryValueProblem;
+			productName = NM_BoundaryValueProblem;
+			productReference = BC0DDCD922A63E6A009506C4 /* NM_BoundaryValueProblem.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC0DDCEC22A63E6C009506C4 /* NM_BoundaryValueProblemUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC0DDCF922A63E6D009506C4 /* Build configuration list for PBXNativeTarget "NM_BoundaryValueProblemUITests" */;
+			buildPhases = (
+				3F779FBA1090A6A5B39C9162 /* [CP] Check Pods Manifest.lock */,
+				BC0DDCE922A63E6C009506C4 /* Sources */,
+				BC0DDCEA22A63E6C009506C4 /* Frameworks */,
+				BC0DDCEB22A63E6C009506C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC0DDCEF22A63E6C009506C4 /* PBXTargetDependency */,
+			);
+			name = NM_BoundaryValueProblemUITests;
+			productName = NM_BoundaryValueProblemUITests;
+			productReference = BC0DDCED22A63E6C009506C4 /* NM_BoundaryValueProblemUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC0DDCD122A63E6A009506C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Иван Романов";
+				TargetAttributes = {
+					BC0DDCD822A63E6A009506C4 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					BC0DDCEC22A63E6C009506C4 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = BC0DDCD822A63E6A009506C4;
+					};
+				};
+			};
+			buildConfigurationList = BC0DDCD422A63E6A009506C4 /* Build configuration list for PBXProject "NM_BoundaryValueProblem" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC0DDCD022A63E6A009506C4;
+			productRefGroup = BC0DDCDA22A63E6A009506C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC0DDCD822A63E6A009506C4 /* NM_BoundaryValueProblem */,
+				BC0DDCEC22A63E6C009506C4 /* NM_BoundaryValueProblemUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC0DDCD722A63E6A009506C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC0DDCE722A63E6C009506C4 /* LaunchScreen.storyboard in Resources */,
+				BC0DDCE422A63E6C009506C4 /* Assets.xcassets in Resources */,
+				BC0DDCE222A63E6A009506C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC0DDCEB22A63E6C009506C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F779FBA1090A6A5B39C9162 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NM_BoundaryValueProblemUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6235E096059013FC975B91C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NM_BoundaryValueProblem/Pods-NM_BoundaryValueProblem-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NM_BoundaryValueProblem/Pods-NM_BoundaryValueProblem-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NM_BoundaryValueProblem/Pods-NM_BoundaryValueProblem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6D7B4357B0C02AD4631824E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NM_BoundaryValueProblem-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC0DDCD522A63E6A009506C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC19C33D22A78A7D00FCC618 /* SolveBoundaryValue.swift in Sources */,
+				BC0DDCDF22A63E6A009506C4 /* ViewController.swift in Sources */,
+				BC0DDCDD22A63E6A009506C4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC0DDCE922A63E6C009506C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC0DDCF222A63E6C009506C4 /* NM_BoundaryValueProblemUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC0DDCEF22A63E6C009506C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC0DDCD822A63E6A009506C4 /* NM_BoundaryValueProblem */;
+			targetProxy = BC0DDCEE22A63E6C009506C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC0DDCE022A63E6A009506C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC0DDCE122A63E6A009506C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC0DDCE522A63E6C009506C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC0DDCE622A63E6C009506C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC0DDCF422A63E6D009506C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC0DDCF522A63E6D009506C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC0DDCF722A63E6D009506C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61AAE9EBF73C86603D826281 /* Pods-NM_BoundaryValueProblem.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SCPX4SG3MN;
+				INFOPLIST_FILE = NM_BoundaryValueProblem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Kubsu.NM-BoundaryValueProblem";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC0DDCF822A63E6D009506C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7203ACE0BFE3FE23A402FDF /* Pods-NM_BoundaryValueProblem.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SCPX4SG3MN;
+				INFOPLIST_FILE = NM_BoundaryValueProblem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Kubsu.NM-BoundaryValueProblem";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC0DDCFA22A63E6D009506C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD82897C023BAA7498AAD953 /* Pods-NM_BoundaryValueProblemUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SCPX4SG3MN;
+				INFOPLIST_FILE = NM_BoundaryValueProblemUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Kubsu.NM-BoundaryValueProblemUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NM_BoundaryValueProblem;
+			};
+			name = Debug;
+		};
+		BC0DDCFB22A63E6D009506C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3EE685C6AF13BAE3161F8A7 /* Pods-NM_BoundaryValueProblemUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SCPX4SG3MN;
+				INFOPLIST_FILE = NM_BoundaryValueProblemUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Kubsu.NM-BoundaryValueProblemUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NM_BoundaryValueProblem;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC0DDCD422A63E6A009506C4 /* Build configuration list for PBXProject "NM_BoundaryValueProblem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0DDCF422A63E6D009506C4 /* Debug */,
+				BC0DDCF522A63E6D009506C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC0DDCF622A63E6D009506C4 /* Build configuration list for PBXNativeTarget "NM_BoundaryValueProblem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0DDCF722A63E6D009506C4 /* Debug */,
+				BC0DDCF822A63E6D009506C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC0DDCF922A63E6D009506C4 /* Build configuration list for PBXNativeTarget "NM_BoundaryValueProblemUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0DDCFA22A63E6D009506C4 /* Debug */,
+				BC0DDCFB22A63E6D009506C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC0DDCD122A63E6A009506C4 /* Project object */;
+}
