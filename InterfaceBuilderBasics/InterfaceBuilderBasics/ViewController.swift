@@ -12,14 +12,12 @@ class ViewController: UIViewController {
     
     var lightOn = true
 
-    @IBOutlet weak var firstButton: UIButton!
-    
-    @IBAction func firstButtonPressed(_ sender: UIButton) {
-        firstButton.backgroundColor = UIColor.cyan
-        
+
+    @IBAction func lightButtonPressed(_ sender: Any) {
         lightOn = !lightOn
         updateUI()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +25,7 @@ class ViewController: UIViewController {
     }
 
     func updateUI() {
-        if lightOn {
-            view.backgroundColor = .white
-            firstButton.setTitle("Off", for: .normal)
-        }
-        else {
-            view.backgroundColor = .black
-            firstButton.setTitle("On", for: .normal)
-        }
+        view.backgroundColor = lightOn ? .white : .black
     }
 
 }
