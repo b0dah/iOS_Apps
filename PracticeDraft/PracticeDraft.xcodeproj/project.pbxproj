@@ -12,6 +12,7 @@
 		BC3C2F6922DC7EAE0005AA4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3C2F6822DC7EAE0005AA4F /* Assets.xcassets */; };
 		BC3C2F6C22DC7EAE0005AA4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3C2F6A22DC7EAE0005AA4F /* LaunchScreen.storyboard */; };
 		BC3C2F7822DC80340005AA4F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C2F7722DC80340005AA4F /* MainScreen.swift */; };
+		BC3C2F9E22DE3BE60005AA4F /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = BC3C2F9D22DE3BE60005AA4F /* items.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BC3C2F6B22DC7EAE0005AA4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3C2F6D22DC7EAE0005AA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3C2F7722DC80340005AA4F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		BC3C2F9D22DE3BE60005AA4F /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				BC3C2F7722DC80340005AA4F /* MainScreen.swift */,
 				BC3C2F6522DC7EAD0005AA4F /* Main.storyboard */,
+				BC3C2F9D22DE3BE60005AA4F /* items.json */,
 				BC3C2F6822DC7EAE0005AA4F /* Assets.xcassets */,
 				BC3C2F6A22DC7EAE0005AA4F /* LaunchScreen.storyboard */,
 				BC3C2F6D22DC7EAE0005AA4F /* Info.plist */,
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3C2F9E22DE3BE60005AA4F /* items.json in Resources */,
 				BC3C2F6C22DC7EAE0005AA4F /* LaunchScreen.storyboard in Resources */,
 				BC3C2F6922DC7EAE0005AA4F /* Assets.xcassets in Resources */,
 				BC3C2F6722DC7EAD0005AA4F /* Main.storyboard in Resources */,
