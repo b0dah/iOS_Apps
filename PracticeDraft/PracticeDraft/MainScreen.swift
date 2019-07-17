@@ -11,6 +11,8 @@ import UIKit
 class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let contentList = [ "I", "need", "to", "populate", "the", "tableView", "with", "the","json","data", "yep" ]
+    var items = [Item]()
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentList.count
@@ -27,24 +29,38 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getJSON()
+    }
 
-        guard let path = Bundle.main.path(forResource: "items", ofType: "json")
-            else {return}
+///////////////////////////////////////////////////////////////
+    func getJSON() {
+        guard let path = Bundle.main.path(forResource: "items", ofType: "json") else {return}
         let url = URL(fileURLWithPath: path)
         
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+        URLSession.shared.dataTask(with: url) { data, urlResponse, error in
             
-            print(json) 
-        }
-        catch {
-            print(error) // if error represented
-        }
-        
+            guard let data = data, error == nil, urlResponse != nil else {
+                print("error while getting")
+                return
+            }
+            
+            print("downloaded")
+            
+            do {
+                let decoder = JSONDecoder()
+                let donloadedItems = try decoder.decode([Item].self, from: data)
+                //print(donloadedItems[0].venue)
+                
+                self.items = donloadedItems
+                print(self.items[0].participant[0].company)
+            }
+            catch {
+                print("smt wrong after getting")
+            }
+            
+        }.resume()
     }
-    
-
    
 
 }
