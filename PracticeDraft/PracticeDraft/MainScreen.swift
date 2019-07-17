@@ -10,23 +10,10 @@ import UIKit
 
 class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let contentList = [ "I", "need", "to", "populate", "the", "tableView", "with", "the","json","data", "yep" ]
-    var items = [Item]()
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contentList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = contentList[indexPath.row]
-        
-        return cell
-    }
-    
+    private var items = [Item]()
 
+    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,16 +37,36 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             do {
                 let decoder = JSONDecoder()
                 let donloadedItems = try decoder.decode([Item].self, from: data)
-                //print(donloadedItems[0].venue)
                 
                 self.items = donloadedItems
-                print(self.items[0].participant[0].company)
+                
+                DispatchQueue.main.async {
+                     self.tableView.reloadData()
+                }
             }
             catch {
                 print("smt wrong after getting")
             }
             
         }.resume()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ItemCell
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.nameLabel.text = items[indexPath.row].name
+        cell.descriprionLabel.text = items[indexPath.row].description
+        
+        return cell
     }
    
 
