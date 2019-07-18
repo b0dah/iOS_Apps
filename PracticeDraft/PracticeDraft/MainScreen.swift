@@ -44,7 +44,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.separatorColor = UIColor.clear /**/
         //height
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 70.0
+        tableView.estimatedRowHeight = 110.0
     }
 
 ///////////////////////////////////////////////////////////////
@@ -77,7 +77,6 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
             
         }.resume()
-        
     }
     
     //SEARCH
@@ -101,12 +100,24 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         cell.descriprionLabel.text = searchedItems[indexPath.row].description
         
         
-        /*if let imageId = items[indexPath.row].imageId {
-            cell.avatarView.image = UIImage(named: String(imageId) )
+        if let imageId = items[indexPath.row].imageId {
+            cell.iconView.image = UIImage(named: String(imageId) )
         }
         else {
-            cell.avatarView.isHidden = true
-        }*/
+            cell.iconView.isHidden = true
+        }
+        
+        if items[indexPath.row].participant[0].name == nil {  // if no participant
+            cell.participantStackView.isHidden = true
+        }
+        else {
+            if let imageId = items[indexPath.row].participant[0].imageId { // avatar
+                cell.avatarView.image = UIImage(named: String(imageId) )
+            }
+            else {
+                cell.avatarView.isHidden = true
+            }
+        }
         
         return cell
     }
@@ -117,14 +128,14 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         cell.backgroundColor = .clear
     }
     
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if items[indexPath.row].participant[0].name == nil {
-            return 70
+            return 68
         }
         else {
-            return 150
+            return 220
         }
-    }*/
+    }
     
     // SEARCH BAR
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
