@@ -14,7 +14,6 @@
 		BC3C2F7822DC80340005AA4F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C2F7722DC80340005AA4F /* MainScreen.swift */; };
 		BC3C2F9E22DE3BE60005AA4F /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = BC3C2F9D22DE3BE60005AA4F /* items.json */; };
 		BC3C2FA022DE66200005AA4F /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C2F9F22DE66200005AA4F /* ItemModel.swift */; };
-		BC3C2FA222DF182B0005AA4F /* id_name.json in Resources */ = {isa = PBXBuildFile; fileRef = BC3C2FA122DF182B0005AA4F /* id_name.json */; };
 		BC3C2FA422DF2ACB0005AA4F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C2FA322DF2ACB0005AA4F /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		BC3C2F7722DC80340005AA4F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		BC3C2F9D22DE3BE60005AA4F /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 		BC3C2F9F22DE66200005AA4F /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		BC3C2FA122DF182B0005AA4F /* id_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = id_name.json; sourceTree = "<group>"; };
 		BC3C2FA322DF2ACB0005AA4F /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,15 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				BC3C2F7722DC80340005AA4F /* MainScreen.swift */,
-				BC3C2F9F22DE66200005AA4F /* ItemModel.swift */,
 				BC3C2FA322DF2ACB0005AA4F /* ItemCell.swift */,
-				BC3C2F9D22DE3BE60005AA4F /* items.json */,
+				BC3C2F9F22DE66200005AA4F /* ItemModel.swift */,
 				BC3C2F6522DC7EAD0005AA4F /* Main.storyboard */,
+				BC3C2F9D22DE3BE60005AA4F /* items.json */,
 				BC3C2F6822DC7EAE0005AA4F /* Assets.xcassets */,
 				BC3C2F6A22DC7EAE0005AA4F /* LaunchScreen.storyboard */,
 				BC3C2F6D22DC7EAE0005AA4F /* Info.plist */,
 				BC3C2F6122DC7EAD0005AA4F /* AppDelegate.swift */,
-				BC3C2FA122DF182B0005AA4F /* id_name.json */,
 			);
 			path = PracticeDraft;
 			sourceTree = "<group>";
@@ -135,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3C2F9E22DE3BE60005AA4F /* items.json in Resources */,
-				BC3C2FA222DF182B0005AA4F /* id_name.json in Resources */,
 				BC3C2F6C22DC7EAE0005AA4F /* LaunchScreen.storyboard in Resources */,
 				BC3C2F6922DC7EAE0005AA4F /* Assets.xcassets in Resources */,
 				BC3C2F6722DC7EAD0005AA4F /* Main.storyboard in Resources */,
