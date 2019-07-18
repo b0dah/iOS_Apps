@@ -13,7 +13,6 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     private var items = [Item]()
     private var searchedItems = [Item]()
 
-    @IBOutlet var topView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
@@ -21,8 +20,8 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         super.viewDidLoad()
         
         getJSON()
-        
-        UISearchBar()
+        setUpSearchBar()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +66,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 let donloadedItems = try decoder.decode([Item].self, from: data)
                 
                 self.items = donloadedItems
+                self.searchedItems = donloadedItems /* for searching */
                 
                 DispatchQueue.main.async {
                      self.tableView.reloadData()
@@ -78,7 +78,6 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             
         }.resume()
         
-        searchedItems = items /* for searching */
     }
     
     //SEARCH
@@ -87,7 +86,8 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        //return items.count
+        return searchedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,12 +97,9 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             return UITableViewCell()
         }
         
-        //cell.nameLabel.text = items[indexPath.row].name
-        //cell.descriprionLabel.text = items[indexPath.row].description
+        cell.nameLabel.text = searchedItems[indexPath.row].name
+        cell.descriprionLabel.text = searchedItems[indexPath.row].description
         
-        if indexPath.row == 1 {
-            cell.descriprionLabel.isHidden = true
-        }
         
         /*if let imageId = items[indexPath.row].imageId {
             cell.avatarView.image = UIImage(named: String(imageId) )
@@ -131,12 +128,20 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     // SEARCH BAR
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        <#code#>
+        
+        guard !searchText.isEmpty  else {
+            searchedItems = items
+            tableView.reloadData()
+            return
+        }
+        searchedItems = items.filter({item -> Bool in
+            return item.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
     }
     
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        <#code#>
-    }
+   
+    
     
     
 
