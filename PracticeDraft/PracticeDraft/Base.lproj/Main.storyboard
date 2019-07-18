@@ -155,11 +155,17 @@
                                                                 <constraint firstItem="evm-he-oQA" firstAttribute="width" secondItem="8Q5-Bj-M0V" secondAttribute="width" id="IY5-JB-Ez6"/>
                                                             </constraints>
                                                         </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cco-ne-Boe">
+                                                            <rect key="frame" x="308.5" y="5" width="24" height="24"/>
+                                                            <state key="normal" image="star"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="8Q5-Bj-M0V" firstAttribute="top" secondItem="bmk-15-zGg" secondAttribute="top" constant="8" id="1bq-Ks-LSc"/>
+                                                        <constraint firstItem="Cco-ne-Boe" firstAttribute="top" secondItem="bmk-15-zGg" secondAttribute="top" constant="5" id="BPi-3j-Lut"/>
                                                         <constraint firstAttribute="bottom" secondItem="8Q5-Bj-M0V" secondAttribute="bottom" constant="5" id="Uzm-zt-83A"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Cco-ne-Boe" secondAttribute="trailing" constant="5" id="ZnP-bn-ecG"/>
                                                         <constraint firstAttribute="trailing" secondItem="8Q5-Bj-M0V" secondAttribute="trailing" constant="40.5" id="cUd-1c-vmV"/>
                                                         <constraint firstItem="8Q5-Bj-M0V" firstAttribute="leading" secondItem="bmk-15-zGg" secondAttribute="leading" constant="10" id="cfo-mo-MTe"/>
                                                         <constraint firstItem="6I9-6p-Xgq" firstAttribute="height" secondItem="bmk-15-zGg" secondAttribute="height" multiplier="0.5" id="l8o-ao-mih"/>
@@ -247,6 +253,7 @@
     <resources>
         <image name="3" width="24" height="24"/>
         <image name="4" width="137" height="137"/>
+        <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nwa-ct-ip5"/>
