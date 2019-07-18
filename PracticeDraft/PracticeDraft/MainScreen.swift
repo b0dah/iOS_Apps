@@ -96,27 +96,41 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             return UITableViewCell()
         }
         
+        // time
+        let beginTime = searchedItems[indexPath.row].beginDate.suffix(8)
+        let endTime = searchedItems[indexPath.row].endDate.suffix(8)
+        cell.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
+        
+        //location
+        cell.venueLabel.text = searchedItems[indexPath.row].venue
+        
+        // Mandatory
         cell.nameLabel.text = searchedItems[indexPath.row].name
         cell.descriprionLabel.text = searchedItems[indexPath.row].description
         
-        
-        if let imageId = items[indexPath.row].imageId {
+        // icon
+        if let imageId = searchedItems[indexPath.row].imageId {
             cell.iconView.image = UIImage(named: String(imageId) )
         }
         else {
             cell.iconView.isHidden = true
         }
         
-        if items[indexPath.row].participant[0].name == nil {  // if no participant
+        // participant section
+        if searchedItems[indexPath.row].participant[0].name == nil {  // if no participant
             cell.participantStackView.isHidden = true
         }
         else {
-            if let imageId = items[indexPath.row].participant[0].imageId { // avatar
+            if let imageId = searchedItems[indexPath.row].participant[0].imageId { // avatar
                 cell.avatarView.image = UIImage(named: String(imageId) )
             }
             else {
                 cell.avatarView.isHidden = true
             }
+            
+            cell.participantNameLabel.text = searchedItems[indexPath.row].participant[0].surname! + " " + searchedItems[indexPath.row].participant[0].name!.prefix(1) + ". " + searchedItems[indexPath.row].participant[0].patronyc!.prefix(1) + "."
+            cell.participantPositionLabel.text = searchedItems[indexPath.row].participant[0].position
+            cell.participantCompanyLabel.text = searchedItems[indexPath.row].participant[0].company
         }
         
         return cell
@@ -129,7 +143,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if items[indexPath.row].participant[0].name == nil {
+        if searchedItems[indexPath.row].participant[0].name == nil {
             return 68
         }
         else {
