@@ -116,6 +116,11 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             cell.iconView.isHidden = true
         }
         
+        // kind 2
+        if searchedItems[indexPath.row].kind == 2 {
+            cell.descriprionLabel.isHidden = true
+        }
+        
         // participant section
         if searchedItems[indexPath.row].participant[0].name == nil {  // if no participant
             cell.participantStackView.isHidden = true
@@ -147,7 +152,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             return 80 // kind = 2
         }
         else if searchedItems[indexPath.row].participant[0].name == nil {
-            return 85 // kind = 1 && !participant
+            return 100 // kind = 1 && !participant
         }
         else {
             return 170 // kind = 1 && participant
