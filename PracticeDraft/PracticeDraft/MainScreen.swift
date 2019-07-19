@@ -143,12 +143,16 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searchedItems[indexPath.row].participant[0].name == nil {
-            return 68
+        if searchedItems[indexPath.row].kind == 2 {
+            return 80 // kind = 2
+        }
+        else if searchedItems[indexPath.row].participant[0].name == nil {
+            return 85 // kind = 1 && !participant
         }
         else {
-            return 220
+            return 170 // kind = 1 && participant
         }
+        
     }
     
     // SEARCH BAR
@@ -163,12 +167,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             return item.name.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
-    }
-    
-   
-    
-    
-    
+    }    
 
 }
 
