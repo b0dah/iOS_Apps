@@ -111,6 +111,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         // icon
         if let imageId = searchedItems[indexPath.row].imageId {
             cell.iconView.image = UIImage(named: String(imageId) )
+            cell.iconView.isHidden = false /**/
         }
         else {
             cell.iconView.isHidden = true
@@ -120,12 +121,17 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         if searchedItems[indexPath.row].kind == 2 {
             cell.descriprionLabel.isHidden = true
         }
+        else {
+            cell.descriprionLabel.isHidden = false /**/
+        }
         
         // participant section
         if searchedItems[indexPath.row].participant[0].name == nil {  // if no participant
             cell.participantStackView.isHidden = true
         }
         else {
+            cell.participantStackView.isHidden = false /**/
+            
             if let imageId = searchedItems[indexPath.row].participant[0].imageId { // avatar
                 cell.avatarView.image = UIImage(named: String(imageId) )
             }
