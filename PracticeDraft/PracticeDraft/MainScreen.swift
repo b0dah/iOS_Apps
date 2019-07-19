@@ -44,7 +44,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.separatorColor = UIColor.clear /**/
         //height
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 110.0
+        tableView.estimatedRowHeight = 170.0
     }
 
 ///////////////////////////////////////////////////////////////
@@ -157,7 +157,6 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         else {
             return 170 // kind = 1 && participant
         }
-        
     }
     
     // SEARCH BAR
