@@ -45,6 +45,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         //height
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 170.0
+        
     }
 
 ///////////////////////////////////////////////////////////////
@@ -151,6 +152,12 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
+    }
+    
+    // Titile with the date
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let date = items[indexPath.row].beginDate.prefix(10)
+        self.title = String(date.replacingOccurrences(of: "-", with: "."))
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
