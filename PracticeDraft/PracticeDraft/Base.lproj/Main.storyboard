@@ -35,9 +35,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4b-jK-bui">
-                                <rect key="frame" x="153" y="319" width="69" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4b-jK-bui">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="vT1-3w-uul"/>
@@ -45,6 +46,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="as6-f4-2ZF" firstAttribute="trailing" secondItem="I4b-jK-bui" secondAttribute="trailing" id="R69-rt-dQL"/>
+                            <constraint firstItem="I4b-jK-bui" firstAttribute="top" secondItem="as6-f4-2ZF" secondAttribute="top" id="VQ7-gB-RdD"/>
+                            <constraint firstItem="as6-f4-2ZF" firstAttribute="bottom" secondItem="I4b-jK-bui" secondAttribute="bottom" id="lkQ-46-IbL"/>
+                            <constraint firstItem="I4b-jK-bui" firstAttribute="leading" secondItem="as6-f4-2ZF" secondAttribute="leading" id="o3b-9F-5ok"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="as6-f4-2ZF"/>
                     </view>
                     <navigationItem key="navigationItem" id="QoX-zp-jgo"/>
@@ -156,16 +163,19 @@
                                                             </constraints>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cco-ne-Boe">
-                                                            <rect key="frame" x="308.5" y="5" width="24" height="24"/>
+                                                            <rect key="frame" x="305.5" y="8" width="24" height="24"/>
                                                             <state key="normal" image="star"/>
+                                                            <connections>
+                                                                <action selector="setStar:" destination="18G-Qa-asw" eventType="touchUpInside" id="7u3-gW-nh2"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="8Q5-Bj-M0V" firstAttribute="top" secondItem="bmk-15-zGg" secondAttribute="top" constant="8" id="1bq-Ks-LSc"/>
-                                                        <constraint firstItem="Cco-ne-Boe" firstAttribute="top" secondItem="bmk-15-zGg" secondAttribute="top" constant="5" id="BPi-3j-Lut"/>
+                                                        <constraint firstItem="Cco-ne-Boe" firstAttribute="top" secondItem="bmk-15-zGg" secondAttribute="top" constant="8" id="BPi-3j-Lut"/>
                                                         <constraint firstAttribute="bottom" secondItem="8Q5-Bj-M0V" secondAttribute="bottom" constant="5" id="Uzm-zt-83A"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Cco-ne-Boe" secondAttribute="trailing" constant="5" id="ZnP-bn-ecG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Cco-ne-Boe" secondAttribute="trailing" constant="8" id="ZnP-bn-ecG"/>
                                                         <constraint firstAttribute="trailing" secondItem="8Q5-Bj-M0V" secondAttribute="trailing" constant="40.5" id="cUd-1c-vmV"/>
                                                         <constraint firstItem="8Q5-Bj-M0V" firstAttribute="leading" secondItem="bmk-15-zGg" secondAttribute="leading" constant="10" id="cfo-mo-MTe"/>
                                                         <constraint firstItem="6I9-6p-Xgq" firstAttribute="height" secondItem="bmk-15-zGg" secondAttribute="height" multiplier="0.5" id="l8o-ao-mih"/>
@@ -208,6 +218,7 @@
                                             <outlet property="participantNameLabel" destination="U3k-Hz-KrC" id="vCv-D2-9AU"/>
                                             <outlet property="participantPositionLabel" destination="qDE-pk-Jed" id="1td-hM-lfT"/>
                                             <outlet property="participantStackView" destination="6I9-6p-Xgq" id="E3q-G9-JMC"/>
+                                            <outlet property="starButton" destination="Cco-ne-Boe" id="yqG-G0-lUE"/>
                                             <outlet property="timeLabel" destination="cEg-O3-asX" id="i4G-br-19c"/>
                                             <outlet property="venueLabel" destination="gRt-dt-c0E" id="gxz-TZ-pzG"/>
                                         </connections>

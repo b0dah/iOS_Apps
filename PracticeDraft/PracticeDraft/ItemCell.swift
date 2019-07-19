@@ -10,6 +10,8 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
+    private var starActivated = false
+    
     @IBOutlet var backView: UIView!
     
     @IBOutlet var nameLabel: UILabel!
@@ -25,6 +27,21 @@ class ItemCell: UITableViewCell {
     
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var venueLabel: UILabel!
+    
+    @IBOutlet var starButton: UIButton!
+    @IBAction func setStar(_ sender: UIButton) {
+        if !starActivated {
+            starButton.setImage(UIImage(named: "starActive.png")!, for: .normal)
+            starActivated = true
+        }
+        else {
+            starButton.setImage(UIImage(named: "star.png")!, for: .normal)
+            starActivated = false
+        }
+        
+    }
+    
+    
     /*lazy var backview: UIView = {
         let view = UIView(frame: CGRect(x: 13, y: 8, width: self.frame.width - 26, height: 150))
         view.backgroundColor = UIColor(red: 28/255, green: 28/255, blue: 29/255, alpha: 0.5)
