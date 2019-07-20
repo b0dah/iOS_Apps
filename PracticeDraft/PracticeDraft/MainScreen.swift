@@ -161,7 +161,7 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searchedItems[indexPath.row].kind == 2 {
+        /*if searchedItems[indexPath.row].kind == 2 {
             return 80 // kind = 2
         }
         else if searchedItems[indexPath.row].participant[0].name == nil {
@@ -169,7 +169,8 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
         else {
             return 170 // kind = 1 && participant
-        }
+        }*/
+        return UITableView.automaticDimension
     }
     
     // SEARCH BAR
