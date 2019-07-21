@@ -8,6 +8,8 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
         return searchedItems.count
     }
     
+    // MARK : - Setting Data to Custom Cell
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ItemCell
@@ -30,6 +32,8 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
         let date = items[indexPath.row].beginDate.prefix(10)
         self.title = String(date.replacingOccurrences(of: "-", with: "."))
     }
+    
+    // MARK : - Cell Height !
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if searchedItems[indexPath.row].kind == 2 {

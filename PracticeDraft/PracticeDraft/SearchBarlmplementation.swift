@@ -8,6 +8,8 @@ extension MainScreenController: UISearchBarDelegate {
         searchBar.delegate = self
     }
     
+    // MARK: - Search Functionality
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         guard !searchText.isEmpty  else {

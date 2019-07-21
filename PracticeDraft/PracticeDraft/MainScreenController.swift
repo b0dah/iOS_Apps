@@ -16,12 +16,16 @@ class MainScreenController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getDataFromJSON()
         setUpSearchBar()
     }
+    
+    // MARK: - Main screen appearence
     
     override func viewWillAppear(_ animated: Bool) {
         // Add a background view to the table view
@@ -40,7 +44,6 @@ class MainScreenController: UIViewController {
         //height
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 170.0
-        
     }
 
 }
