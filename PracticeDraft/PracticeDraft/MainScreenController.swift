@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class MainScreenController: UIViewController {
     
-    private var items = [Item]()
-    private var searchedItems = [Item]()
+    var items = [Item]()
+    var searchedItems = [Item]()
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -19,9 +19,8 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getJSON()
+        getDataFromJSON()
         setUpSearchBar()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,145 +46,6 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.estimatedRowHeight = 170.0
         
     }
-
-///////////////////////////////////////////////////////////////
-    func getJSON() {
-        guard let path = Bundle.main.path(forResource: "items", ofType: "json") else {return}
-        let url = URL(fileURLWithPath: path)
-        
-        URLSession.shared.dataTask(with: url) { data, urlResponse, error in
-            
-            guard let data = data, error == nil, urlResponse != nil else {
-                print("error while getting")
-                return
-            }
-            
-            print("downloaded")
-            
-            do {
-                let decoder = JSONDecoder()
-                let donloadedItems = try decoder.decode([Item].self, from: data)
-                
-                self.items = donloadedItems
-                self.searchedItems = donloadedItems /* for searching */
-                
-                DispatchQueue.main.async {
-                     self.tableView.reloadData()
-                }
-            }
-            catch {
-                print("smt wrong after getting")
-            }
-            
-        }.resume()
-    }
-    
-    //SEARCH
-    private func setUpSearchBar(){
-        searchBar.delegate = self
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return items.count
-        return searchedItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ItemCell
-        else {
-            return UITableViewCell()
-        }
-        
-        // time
-        let beginTime = searchedItems[indexPath.row].beginDate.suffix(8)
-        let endTime = searchedItems[indexPath.row].endDate.suffix(8)
-        cell.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
-        
-        //location
-        cell.venueLabel.text = searchedItems[indexPath.row].venue
-        
-        // Mandatory
-        cell.nameLabel.text = searchedItems[indexPath.row].name
-        cell.descriprionLabel.text = searchedItems[indexPath.row].description
-        
-        // icon
-        if let imageId = searchedItems[indexPath.row].imageId {
-            cell.iconView.image = UIImage(named: String(imageId) )
-            cell.iconView.isHidden = false /**/
-        }
-        else {
-            cell.iconView.isHidden = true
-        }
-        
-        // kind 2
-        if searchedItems[indexPath.row].kind == 2 {
-            cell.descriprionLabel.isHidden = true
-        }
-        else {
-            cell.descriprionLabel.isHidden = false /**/
-        }
-        
-        // participant section
-        if searchedItems[indexPath.row].participant[0].name == nil {  // if no participant
-            cell.participantStackView.isHidden = true
-        }
-        else {
-            cell.participantStackView.isHidden = false /**/
-            
-            if let imageId = searchedItems[indexPath.row].participant[0].imageId { // avatar
-                cell.avatarView.image = UIImage(named: String(imageId) )
-            }
-            else {
-                cell.avatarView.isHidden = true
-            }
-            
-            cell.participantNameLabel.text = searchedItems[indexPath.row].participant[0].surname! + " " + searchedItems[indexPath.row].participant[0].name!.prefix(1) + ". " + searchedItems[indexPath.row].participant[0].patronyc!.prefix(1) + "."
-            cell.participantPositionLabel.text = searchedItems[indexPath.row].participant[0].position
-            cell.participantCompanyLabel.text = searchedItems[indexPath.row].participant[0].company
-        }
-        
-        return cell
-    }
-    
-    //APPEARENCE
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = .clear
-    }
-    
-    // Titile with the date
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let date = items[indexPath.row].beginDate.prefix(10)
-        self.title = String(date.replacingOccurrences(of: "-", with: "."))
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searchedItems[indexPath.row].kind == 2 {
-            return 80 // kind = 2
-        }
-        else if searchedItems[indexPath.row].participant[0].name == nil {
-            return 100 // kind = 1 && !participant
-        }
-        else {
-            return 170 // kind = 1 && participant
-        }
-        //return UITableView.automaticDimension
-    }
-    
-    // SEARCH BAR
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        guard !searchText.isEmpty  else {
-            searchedItems = items
-            tableView.reloadData()
-            return
-        }
-        searchedItems = items.filter({item -> Bool in
-            return item.name.lowercased().contains(searchText.lowercased())
-        })
-        tableView.reloadData()
-    }    
 
 }
 
