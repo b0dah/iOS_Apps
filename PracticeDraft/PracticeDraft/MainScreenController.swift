@@ -30,10 +30,6 @@ class MainScreenController: UIViewController {
         self.tableView.backgroundView = imageView
         self.tableView.backgroundColor = UIColor.clear
         
-        //BAck for top view
-        //topView.backgroundColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 0.72)
-        //searchBar.barTintColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 0.72)
-        //self.navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green: 149/255, blue: 0, alpha: 1)
         searchBar.placeholder = "Поиск"
         
         // no lines where there aren't cells

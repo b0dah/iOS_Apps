@@ -25,7 +25,7 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .clear
     }
     
-    // Titile with the date
+    // Title with the date
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let date = items[indexPath.row].beginDate.prefix(10)
         self.title = String(date.replacingOccurrences(of: "-", with: "."))
@@ -41,6 +41,6 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
         else {
             return 170 // kind = 1 && participant
         }
-        //return UITableView.automaticDimension
     }
+    
 }
