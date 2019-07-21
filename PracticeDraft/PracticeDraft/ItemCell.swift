@@ -38,9 +38,58 @@ class ItemCell: UITableViewCell {
             starButton.setImage(UIImage(named: "star.png")!, for: .normal)
             starActivated = false
         }
-        
     }
     
+    func setData(currentItem: Item) {
+        // time
+        let beginTime = currentItem.beginDate.suffix(8)
+        let endTime = currentItem.endDate.suffix(8)
+        self.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
+    
+        //location
+        self.venueLabel.text = currentItem.venue
+    
+        // Mandatory
+        self.nameLabel.text = currentItem.name
+        self.descriprionLabel.text = currentItem.description
+    
+        // icon
+        if let imageId = currentItem.imageId {
+            self.iconView.image = UIImage(named: String(imageId) )
+            self.iconView.isHidden = false /**/
+        }
+        else {
+            self.iconView.isHidden = true
+        }
+    
+        // kind 2
+        if currentItem.kind == 2 {
+            self.descriprionLabel.isHidden = true
+        }
+        else {
+            self.descriprionLabel.isHidden = false /**/
+        }
+    
+        // participant section
+        if currentItem.participant[0].name == nil {  // if no participant
+        self.participantStackView.isHidden = true
+        }
+        else {
+            self.participantStackView.isHidden = false /**/
+    
+            if let imageId = currentItem.participant[0].imageId { // avatar
+                self.avatarView.image = UIImage(named: String(imageId) )
+            }
+            else {
+                self.avatarView.isHidden = true
+            }
+    
+            self.participantNameLabel.text = currentItem.participant[0].surname! + " " + currentItem.participant[0].name!.prefix(1) + ". " + currentItem.participant[0].patronyc!.prefix(1) + "."
+            self.participantPositionLabel.text = currentItem.participant[0].position
+            self.participantCompanyLabel.text = currentItem.participant[0].company
+        }
+        
+    }
     
     /*lazy var backview: UIView = {
         let view = UIView(frame: CGRect(x: 13, y: 8, width: self.frame.width - 26, height: 150))
