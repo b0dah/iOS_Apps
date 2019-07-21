@@ -40,21 +40,32 @@ class ItemCell: UITableViewCell {
         }
     }
     
+    var item : Item? {
+        didSet {
+            self.updateUI()
+        }
+    }
+    
+    
     func setData(currentItem: Item) {
+        self.item = currentItem
+    }
+        
+    private func updateUI() {
         // time
-        let beginTime = currentItem.beginDate.suffix(8)
-        let endTime = currentItem.endDate.suffix(8)
+        let beginTime = item!.beginDate.suffix(8)
+        let endTime = item!.endDate.suffix(8)
         self.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
     
         //location
-        self.venueLabel.text = currentItem.venue
+        self.venueLabel.text = item?.venue
     
         // Mandatory
-        self.nameLabel.text = currentItem.name
-        self.descriprionLabel.text = currentItem.description
+        self.nameLabel.text = item?.name
+        self.descriprionLabel.text = item?.description
     
         // icon
-        if let imageId = currentItem.imageId {
+        if let imageId = item?.imageId {
             self.iconView.image = UIImage(named: String(imageId) )
             self.iconView.isHidden = false /**/
         }
@@ -63,7 +74,7 @@ class ItemCell: UITableViewCell {
         }
     
         // kind 2
-        if currentItem.kind == 2 {
+        if item?.kind == 2 {
             self.descriprionLabel.isHidden = true
         }
         else {
@@ -71,22 +82,22 @@ class ItemCell: UITableViewCell {
         }
     
         // participant section
-        if currentItem.participant[0].name == nil {  // if no participant
+        if item?.participant[0].name == nil {  // if no participant
         self.participantStackView.isHidden = true
         }
         else {
             self.participantStackView.isHidden = false /**/
     
-            if let imageId = currentItem.participant[0].imageId { // avatar
+            if let imageId = item?.participant[0].imageId { // avatar
                 self.avatarView.image = UIImage(named: String(imageId) )
             }
             else {
                 self.avatarView.isHidden = true
             }
     
-            self.participantNameLabel.text = currentItem.participant[0].surname! + " " + currentItem.participant[0].name!.prefix(1) + ". " + currentItem.participant[0].patronyc!.prefix(1) + "."
-            self.participantPositionLabel.text = currentItem.participant[0].position
-            self.participantCompanyLabel.text = currentItem.participant[0].company
+            self.participantNameLabel.text = item!.participant[0].surname! + " " + item!.participant[0].name!.prefix(1) + ". " + item!.participant[0].patronyc!.prefix(1) + "."
+            self.participantPositionLabel.text = item?.participant[0].position
+            self.participantCompanyLabel.text = item?.participant[0].company
         }
         
     }

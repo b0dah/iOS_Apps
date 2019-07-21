@@ -71,7 +71,7 @@
 				BCB22DCC22E4E36100991D2A /* DataReceptionFromJSON.swift */,
 				BCB22DCE22E4E63900991D2A /* SearchBarlmplementation.swift */,
 				BC3C2FA322DF2ACB0005AA4F /* ItemCell.swift */,
-				BC3C2F9F22DE66200005AA4F /* ItemModel.swift */,
+				BCB22DF022E4FD7100991D2A /* Model */,
 				BC3C2F6522DC7EAD0005AA4F /* Main.storyboard */,
 				BC3C2F9D22DE3BE60005AA4F /* items.json */,
 				BC3C2F6822DC7EAE0005AA4F /* Assets.xcassets */,
@@ -80,6 +80,14 @@
 				BC3C2F6122DC7EAD0005AA4F /* AppDelegate.swift */,
 			);
 			path = PracticeDraft;
+			sourceTree = "<group>";
+		};
+		BCB22DF022E4FD7100991D2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC3C2F9F22DE66200005AA4F /* ItemModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

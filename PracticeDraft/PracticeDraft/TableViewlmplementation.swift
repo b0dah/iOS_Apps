@@ -9,7 +9,6 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK : - Setting Data to Custom Cell
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ItemCell
