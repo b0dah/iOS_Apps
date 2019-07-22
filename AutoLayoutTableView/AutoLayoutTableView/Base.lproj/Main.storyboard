@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoLayoutTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pjv-FZ-IXf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="160" id="ovQ-31-pc6" customClass="CustomTableViewCell" customModule="AutoLayoutTableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ovQ-31-pc6" id="Jhf-zZ-xYN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2019-07-14 at 14.23.54" translatesAutoresizingMaskIntoConstraints="NO" id="se8-lW-6SO">
+                                                    <rect key="frame" x="12" y="12" width="64" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="faj-Ip-WJ7"/>
+                                                        <constraint firstAttribute="height" constant="64" id="rmQ-9x-z50"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryL-Kb-cfu">
+                                                    <rect key="frame" x="88" y="12" width="275" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="ipad pro is an amazing table that works really well with the apple pencil that you can draw some really cool on" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVE-q2-QAw">
+                                                    <rect key="frame" x="88" y="50.5" width="284" height="86.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="se8-lW-6SO" secondAttribute="bottom" constant="12" id="25R-lx-gLg"/>
+                                                <constraint firstAttribute="trailing" secondItem="ryL-Kb-cfu" secondAttribute="trailing" constant="12" id="8GJ-8s-91o"/>
+                                                <constraint firstItem="LVE-q2-QAw" firstAttribute="trailing" secondItem="Jhf-zZ-xYN" secondAttribute="trailingMargin" constant="12" id="DKJ-OC-BoR"/>
+                                                <constraint firstItem="se8-lW-6SO" firstAttribute="top" secondItem="Jhf-zZ-xYN" secondAttribute="top" constant="12" id="EnJ-YO-zJf"/>
+                                                <constraint firstItem="LVE-q2-QAw" firstAttribute="top" secondItem="ryL-Kb-cfu" secondAttribute="bottom" constant="17.5" id="V2W-Lk-l3M"/>
+                                                <constraint firstItem="LVE-q2-QAw" firstAttribute="leading" secondItem="se8-lW-6SO" secondAttribute="trailing" constant="12" id="l1Z-Ti-3F5"/>
+                                                <constraint firstItem="ryL-Kb-cfu" firstAttribute="leading" secondItem="se8-lW-6SO" secondAttribute="trailing" constant="12" id="l5F-wQ-LS6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LVE-q2-QAw" secondAttribute="bottom" constant="12" id="rkg-gL-biC"/>
+                                                <constraint firstItem="ryL-Kb-cfu" firstAttribute="top" secondItem="Jhf-zZ-xYN" secondAttribute="top" constant="12" id="rpu-4s-kik"/>
+                                                <constraint firstItem="se8-lW-6SO" firstAttribute="leading" secondItem="Jhf-zZ-xYN" secondAttribute="leading" constant="12" id="uOw-l5-KQa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="LVE-q2-QAw" id="S2q-na-8cn"/>
+                                            <outlet property="imageLabel" destination="se8-lW-6SO" id="nJJ-E2-8KC"/>
+                                            <outlet property="titleLabel" destination="ryL-Kb-cfu" id="WXh-nw-O6l"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TfK-52-wbn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TDq-5T-zLv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pjv-FZ-IXf" secondAttribute="trailing" id="hv4-G8-sfU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pjv-FZ-IXf" secondAttribute="bottom" id="mRY-eu-L7m"/>
+                            <constraint firstItem="Pjv-FZ-IXf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q6g-Rt-mz7"/>
+                            <constraint firstItem="Pjv-FZ-IXf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vdQ-UV-gAG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pjv-FZ-IXf" id="qql-O5-P4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Screenshot 2019-07-14 at 14.23.54" width="1072" height="1294"/>
+    </resources>
+</document>
