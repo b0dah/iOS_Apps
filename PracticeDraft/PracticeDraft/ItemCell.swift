@@ -40,17 +40,18 @@ class ItemCell: UITableViewCell {
         }
     }
     
+    // MARK: - item instance for the cell
     var item : Item? {
         didSet {
             self.updateUI()
         }
     }
     
-    
     func setData(currentItem: Item) {
         self.item = currentItem
     }
-        
+    
+    // MARK: - updating UI with current received instance's data
     private func updateUI() {
         // time
         let beginTime = item!.beginDate.suffix(8)
