@@ -14,6 +14,8 @@ class ItemCell: UITableViewCell {
     
     @IBOutlet var backView: UIView!
     
+    @IBOutlet var rootStackView: UIStackView!
+    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriprionLabel: UILabel!
     @IBOutlet var iconView: UIImageView!

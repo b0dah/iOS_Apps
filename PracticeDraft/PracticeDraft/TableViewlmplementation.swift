@@ -35,15 +35,15 @@ extension MainScreenController : UITableViewDelegate, UITableViewDataSource {
     // MARK : - Cell Height !
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searchedItems[indexPath.row].kind == 2 {
-            return 80 // kind = 2
-        }
-        else if searchedItems[indexPath.row].participant[0].name == nil {
-            return 100 // kind = 1 && !participant
-        }
-        else {
+        //if searchedItems[indexPath.row].kind == 2 {
+        //    return 80 // kind = 2
+        //}
+        //else if searchedItems[indexPath.row].participant[0].name == nil {
+        //    return 100 // kind = 1 && !participant
+        //}
+        //else {
             return 170 // kind = 1 && participant
-        }
+        //}
     }
     
 }

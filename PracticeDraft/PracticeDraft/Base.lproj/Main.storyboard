@@ -223,6 +223,7 @@
                                             <outlet property="participantNameLabel" destination="U3k-Hz-KrC" id="vCv-D2-9AU"/>
                                             <outlet property="participantPositionLabel" destination="qDE-pk-Jed" id="1td-hM-lfT"/>
                                             <outlet property="participantStackView" destination="6I9-6p-Xgq" id="E3q-G9-JMC"/>
+                                            <outlet property="rootStackView" destination="8Q5-Bj-M0V" id="OeM-Jf-bSf"/>
                                             <outlet property="starButton" destination="Cco-ne-Boe" id="yqG-G0-lUE"/>
                                             <outlet property="timeLabel" destination="cEg-O3-asX" id="i4G-br-19c"/>
                                             <outlet property="venueLabel" destination="gRt-dt-c0E" id="gxz-TZ-pzG"/>
