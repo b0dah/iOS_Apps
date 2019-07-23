@@ -88,7 +88,7 @@ class ItemCell: UITableViewCell {
         self.iconView.isHidden = true
       
         self.descriptionLabel.text = item?.description //self.descriptionLabel.isHidden = false /**/
-        // unhide description area
+        // unhide the description area
         self.mainStackView.arrangedSubviews[1].isHidden = false
     
         
