@@ -14,6 +14,7 @@ class MainScreenController: UIViewController {
     var searchedItems = [Item]()
     
     @IBOutlet var tableView: UITableView!
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Life cycle
@@ -22,7 +23,7 @@ class MainScreenController: UIViewController {
         super.viewDidLoad()
         
         getDataFromJSON()
-        //setUpSearchBar()
+        setUpSearchBar()
         
         setupNavigationBar()
     }
@@ -37,6 +38,10 @@ class MainScreenController: UIViewController {
         self.tableView.backgroundColor = UIColor.clear
         
         searchController.searchBar.placeholder = "Поиск"
+        
+        var textFieldInsideSearchBar = searchController.searchBar.value(forKey: "_searchField") as? UITextField
+        //textFieldInsideSearchBar?.textColor =
+        textFieldInsideSearchBar?.backgroundColor = UIColor(red: 133/255, green: 33/255, blue: 33/255, alpha: 0.72)
         
         // no lines where there aren't cells
         tableView.tableFooterView = UIView()

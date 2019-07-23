@@ -6,6 +6,10 @@ extension MainScreenController: UISearchBarDelegate {
     
     func setUpSearchBar(){
         searchController.searchBar.delegate = self
+        searchController.searchBar.tintColor = .orange
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+            
     }
     
     // MARK: - Search Functionality
