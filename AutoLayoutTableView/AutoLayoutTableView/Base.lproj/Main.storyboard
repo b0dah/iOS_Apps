@@ -100,7 +100,7 @@
                                                                     <rect key="frame" x="0.0" y="211.5" width="365" height="105.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyG-6L-IIC">
-                                                                            <rect key="frame" x="50" y="20" width="295" height="65.5"/>
+                                                                            <rect key="frame" x="50" y="20" width="295" height="24.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -113,14 +113,31 @@
                                                                                 <constraint firstAttribute="width" constant="40" id="ObC-TY-cqL"/>
                                                                             </constraints>
                                                                         </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCp-gw-rW2">
+                                                                            <rect key="frame" x="50" y="75" width="295" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXC-2a-wes">
+                                                                            <rect key="frame" x="50" y="46" width="42" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstItem="VyG-6L-IIC" firstAttribute="leading" secondItem="5el-VE-mmd" secondAttribute="trailing" constant="5" id="4J6-KI-5yE"/>
                                                                         <constraint firstAttribute="trailing" secondItem="VyG-6L-IIC" secondAttribute="trailing" constant="20" id="7Cl-ed-SGc"/>
+                                                                        <constraint firstItem="GCp-gw-rW2" firstAttribute="trailing" secondItem="VyG-6L-IIC" secondAttribute="trailing" id="BWw-Jn-EHY"/>
+                                                                        <constraint firstItem="CXC-2a-wes" firstAttribute="trailing" secondItem="VyG-6L-IIC" secondAttribute="trailing" id="Fmh-jg-Jd4"/>
+                                                                        <constraint firstItem="GCp-gw-rW2" firstAttribute="top" secondItem="CXC-2a-wes" secondAttribute="bottom" constant="5" id="Gcr-YZ-L3o"/>
+                                                                        <constraint firstItem="CXC-2a-wes" firstAttribute="top" secondItem="VyG-6L-IIC" secondAttribute="bottom" constant="5" id="Hmz-hM-bXh"/>
                                                                         <constraint firstItem="5el-VE-mmd" firstAttribute="leading" secondItem="2SS-VS-92d" secondAttribute="leading" constant="5" id="IB0-di-rwf"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="VyG-6L-IIC" secondAttribute="bottom" constant="20" id="Sjt-p9-SMW"/>
-                                                                        <constraint firstItem="VyG-6L-IIC" firstAttribute="centerY" secondItem="2SS-VS-92d" secondAttribute="centerY" id="hdy-Et-Wwi"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="GCp-gw-rW2" secondAttribute="bottom" constant="10" id="jkg-21-uyC"/>
+                                                                        <constraint firstItem="CXC-2a-wes" firstAttribute="leading" secondItem="VyG-6L-IIC" secondAttribute="leading" id="kva-ag-QCk"/>
+                                                                        <constraint firstItem="GCp-gw-rW2" firstAttribute="leading" secondItem="VyG-6L-IIC" secondAttribute="leading" id="lGS-e6-0Uq"/>
                                                                         <constraint firstItem="5el-VE-mmd" firstAttribute="top" secondItem="2SS-VS-92d" secondAttribute="top" constant="5" id="rzI-J5-ddp"/>
                                                                         <constraint firstItem="VyG-6L-IIC" firstAttribute="top" secondItem="2SS-VS-92d" secondAttribute="top" constant="20" id="w8Y-V5-POH"/>
                                                                     </constraints>
