@@ -11,6 +11,8 @@ import Foundation
 
 class CustomTableViewCell: UITableViewCell {
 
+    @IBOutlet var mainStackView: UIStackView!
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var imageLabel: UIImageView!

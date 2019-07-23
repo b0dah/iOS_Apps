@@ -35,8 +35,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier:
             "cell") as! CustomTableViewCell
         
-        cell.descriptionLabel.text = array[indexPath.row]
-        cell.titleLabel.text = "name"
+        
+        if array[indexPath.row] == "" {
+            cell.mainStackView.arrangedSubviews.last?.isHidden = true
+            cell.mainStackView.arrangedSubviews[1].isHidden = true
+        }
+        else {
+            cell.mainStackView.arrangedSubviews.last?.isHidden = false
+            cell.mainStackView.arrangedSubviews[1].isHidden = false
+            cell.descriptionLabel.text = array[indexPath.row]
+            }
+            cell.titleLabel.text = "name"
         
         return cell
     }
