@@ -86,10 +86,12 @@ class ItemCell: UITableViewCell {
     
         // participant section
         if item?.participant[0].name == nil {  // if no participant
-        self.participantStackView.isHidden = true
+            //self.participantStackView.isHidden = true
+            rootStackView.arrangedSubviews.last?.isHidden = true
         }
         else {
-            self.participantStackView.isHidden = false /**/
+            //self.participantStackView.isHidden = false /**/
+            rootStackView.arrangedSubviews.last?.isHidden = false
     
             if let imageId = item?.participant[0].imageId { // avatar
                 self.avatarView.image = UIImage(named: String(imageId) )
