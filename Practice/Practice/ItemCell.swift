@@ -59,10 +59,10 @@ class ItemCell: UITableViewCell {
         // time
         let beginTime = item!.beginDate.suffix(8)
         let endTime = item!.endDate.suffix(8)
-        //self.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
+        self.timeLabel.text = beginTime.prefix(5) + "-" + endTime.prefix(5)
     
         //location
-        //self.venueLabel.text = item?.venue
+        self.venueLabel.text = item?.venue
     
         // Mandatory
         self.titleLabel.text = item?.name

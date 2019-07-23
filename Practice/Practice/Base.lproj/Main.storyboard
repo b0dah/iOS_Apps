@@ -151,11 +151,29 @@
                                                         <constraint firstItem="sR1-C1-9FI" firstAttribute="leading" secondItem="ZmG-Nc-nmh" secondAttribute="leading" id="ie2-kH-t1l"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVS-e7-b0b">
+                                                    <rect key="frame" x="35" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlt-3G-8ez">
+                                                    <rect key="frame" x="281" y="10" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="ZmG-Nc-nmh" secondAttribute="bottom" constant="10" id="07T-0f-6Fw"/>
+                                                <constraint firstItem="KVS-e7-b0b" firstAttribute="height" secondItem="Vlt-3G-8ez" secondAttribute="height" id="5SD-1v-Pf7"/>
+                                                <constraint firstItem="KVS-e7-b0b" firstAttribute="bottom" secondItem="Vlt-3G-8ez" secondAttribute="bottom" id="Crh-ub-kkb"/>
+                                                <constraint firstItem="KVS-e7-b0b" firstAttribute="leading" secondItem="ZmG-Nc-nmh" secondAttribute="leading" constant="10" id="EJA-Dl-oFT"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZmG-Nc-nmh" secondAttribute="trailing" constant="12" id="L6m-dv-Yrp"/>
+                                                <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="Vlt-3G-8ez" secondAttribute="bottom" constant="3" id="frx-9b-eHN"/>
                                                 <constraint firstItem="ZmG-Nc-nmh" firstAttribute="leading" secondItem="91A-u0-97K" secondAttribute="leading" constant="12" id="h78-Br-sEz"/>
+                                                <constraint firstItem="Vlt-3G-8ez" firstAttribute="trailing" secondItem="ZmG-Nc-nmh" secondAttribute="trailing" constant="-10" id="hsm-cu-0tc"/>
+                                                <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="KVS-e7-b0b" secondAttribute="bottom" constant="3" id="qbI-uE-GYS"/>
                                                 <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="91A-u0-97K" secondAttribute="top" constant="27" id="zkW-k1-Mda"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -169,8 +187,10 @@
                                             <outlet property="participantNameLabel" destination="6ub-uP-N7c" id="zIb-cq-ga0"/>
                                             <outlet property="participantPositionLabel" destination="AIb-3l-4xq" id="cfH-da-Utp"/>
                                             <outlet property="starButton" destination="qvn-99-iws" id="CrU-HR-C0u"/>
+                                            <outlet property="timeLabel" destination="KVS-e7-b0b" id="68l-Do-MRc"/>
                                             <outlet property="titleLabel" destination="zjv-vR-IMZ" id="THa-ib-SVu"/>
                                             <outlet property="topStackView" destination="YRy-Bz-zqG" id="dAD-Gg-UR2"/>
+                                            <outlet property="venueLabel" destination="Vlt-3G-8ez" id="HUw-ey-Pvq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
