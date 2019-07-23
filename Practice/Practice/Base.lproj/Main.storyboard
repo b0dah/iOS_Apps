@@ -30,10 +30,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmG-Nc-nmh">
-                                                    <rect key="frame" x="12" y="27" width="351" height="289.5"/>
+                                                    <rect key="frame" x="12" y="37" width="351" height="288.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sR1-C1-9FI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="290"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="289"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2l-RI-Od3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="351" height="46"/>
@@ -77,7 +77,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-H8-TCg">
-                                                                    <rect key="frame" x="0.0" y="62.5" width="351" height="106"/>
+                                                                    <rect key="frame" x="0.0" y="62" width="351" height="106"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhW-i6-jwi">
                                                                             <rect key="frame" x="10" y="0.0" width="331" height="91"/>
@@ -95,7 +95,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-mU-NvV">
-                                                                    <rect key="frame" x="0.0" y="184.5" width="351" height="105.5"/>
+                                                                    <rect key="frame" x="0.0" y="183.5" width="351" height="105.5"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-gT-zWx">
                                                                             <rect key="frame" x="10" y="0.0" width="35" height="35"/>
@@ -165,7 +165,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ZmG-Nc-nmh" secondAttribute="bottom" constant="10" id="07T-0f-6Fw"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZmG-Nc-nmh" secondAttribute="bottom" constant="1" id="07T-0f-6Fw"/>
                                                 <constraint firstItem="KVS-e7-b0b" firstAttribute="height" secondItem="Vlt-3G-8ez" secondAttribute="height" id="5SD-1v-Pf7"/>
                                                 <constraint firstItem="KVS-e7-b0b" firstAttribute="bottom" secondItem="Vlt-3G-8ez" secondAttribute="bottom" id="Crh-ub-kkb"/>
                                                 <constraint firstItem="KVS-e7-b0b" firstAttribute="leading" secondItem="ZmG-Nc-nmh" secondAttribute="leading" constant="10" id="EJA-Dl-oFT"/>
@@ -174,7 +174,7 @@
                                                 <constraint firstItem="ZmG-Nc-nmh" firstAttribute="leading" secondItem="91A-u0-97K" secondAttribute="leading" constant="12" id="h78-Br-sEz"/>
                                                 <constraint firstItem="Vlt-3G-8ez" firstAttribute="trailing" secondItem="ZmG-Nc-nmh" secondAttribute="trailing" constant="-10" id="hsm-cu-0tc"/>
                                                 <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="KVS-e7-b0b" secondAttribute="bottom" constant="3" id="qbI-uE-GYS"/>
-                                                <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="91A-u0-97K" secondAttribute="top" constant="27" id="zkW-k1-Mda"/>
+                                                <constraint firstItem="ZmG-Nc-nmh" firstAttribute="top" secondItem="91A-u0-97K" secondAttribute="top" constant="37" id="zkW-k1-Mda"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -258,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                <state key="normal" title="&gt;"/>
+                                <state key="normal" title="tap here &gt;"/>
                                 <connections>
                                     <segue destination="heA-jW-7H8" kind="show" id="Qma-Hd-3wJ"/>
                                 </connections>

@@ -21,12 +21,10 @@ class ItemCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var iconView: UIImageView!
     
-    
     @IBOutlet var avatarView: UIImageView!
     @IBOutlet var participantNameLabel: UILabel!
     @IBOutlet var participantPositionLabel: UILabel!
     @IBOutlet var participantCompanyLabel: UILabel!
-    
     
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var venueLabel: UILabel!
@@ -56,6 +54,9 @@ class ItemCell: UITableViewCell {
     
     // MARK: - updating UI with current received instance's data
     private func updateUI() {
+        
+        // MARK: - Top Mandatory View Setting Label
+        
         // time
         let beginTime = item!.beginDate.suffix(8)
         let endTime = item!.endDate.suffix(8)
@@ -64,9 +65,11 @@ class ItemCell: UITableViewCell {
         //location
         self.venueLabel.text = item?.venue
     
-        // Mandatory
+        // Name
         self.titleLabel.text = item?.name
-
+        
+        // MARK: - Design for cell where (kind 2)
+        
         guard item?.kind != 2 else { // set only the icon, hide the extra areas and return
             
             if let imageId = item?.imageId {
@@ -84,6 +87,8 @@ class ItemCell: UITableViewCell {
             
             return
         }
+        
+        // MARK: - Setting Labels for cells (kind = 1)
         
         self.iconView.isHidden = true
       
@@ -118,8 +123,6 @@ class ItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

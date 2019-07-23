@@ -37,21 +37,12 @@ class MainScreenController: UIViewController {
         self.tableView.backgroundView = imageView
         self.tableView.backgroundColor = UIColor.clear
         
-        searchController.searchBar.placeholder = "Поиск"
-        
-        var textFieldInsideSearchBar = searchController.searchBar.value(forKey: "_searchField") as? UITextField
-        //textFieldInsideSearchBar?.textColor =
-        textFieldInsideSearchBar?.backgroundColor = UIColor(red: 133/255, green: 33/255, blue: 33/255, alpha: 0.72)
         
         // no lines where there aren't cells
         tableView.tableFooterView = UIView()
         
-        // table view's appearence
-        tableView.separatorColor = UIColor.clear /**/
-        
-        //height
-        //tableView.rowHeight = UITableView.automaticDimension
-        //tableView.estimatedRowHeight = 170.0
+        // no separators betw cells
+        tableView.separatorColor = UIColor.clear
     }
     
     // MARK: - setting up the Navigation Bar
