@@ -39,10 +39,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if array[indexPath.row] == "" {
             cell.mainStackView.arrangedSubviews.last?.isHidden = true
             cell.mainStackView.arrangedSubviews[1].isHidden = true
+            
+            cell.topStackView.arrangedSubviews.first?.isHidden = true
         }
         else {
             cell.mainStackView.arrangedSubviews.last?.isHidden = false
             cell.mainStackView.arrangedSubviews[1].isHidden = false
+            cell.topStackView.arrangedSubviews.first?.isHidden = false
             cell.descriptionLabel.text = array[indexPath.row]
             }
             cell.titleLabel.text = "name"
