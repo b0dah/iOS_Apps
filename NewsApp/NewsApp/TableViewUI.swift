@@ -12,6 +12,8 @@ extension MainViewController {
     
     func createTableViewUI() {
         
+        tableView.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
+        
         tableView.frame = self.view.frame
         tableView.backgroundColor = .cyan
         tableView.separatorStyle = .none
@@ -22,6 +24,6 @@ extension MainViewController {
         
         self.view.addSubview(tableView)
         
-        tableView.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
+        
     }
 }

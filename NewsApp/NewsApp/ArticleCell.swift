@@ -15,14 +15,15 @@ class ArticleCell: UITableViewCell {
     
     
     lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: backViewSpacing, y: backViewSpacing, width: self.frame.width - 2 * backViewSpacing, height: self.frame.height - 2 * backViewSpacing))
+        //let view = UIView(frame: CGRect(x: backViewSpacing, y: backViewSpacing, width: self.frame.width - 2 * backViewSpacing, height: self.frame.height - 2 * backViewSpacing))
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
 
     lazy var pictureView : UIImageView = { // can't give the name "image"
         let image = UIImageView(frame: CGRect(x: cellContentSpacing, y: cellContentSpacing, width: 100, height: 100))
-        
         // maintaining aspect ratio
         image.contentMode = .scaleAspectFit
         return image
@@ -52,11 +53,27 @@ class ArticleCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(backView)
+        
+        backView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
+        backView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10).isActive = true
+        backView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
+        backView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
+        
+        
+        //backView.addSubview(pictureView)
+        //backView.addSubview(headlineLabel)
+        //backView.addSubview(descriptionLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK - required methods
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,13 +82,7 @@ class ArticleCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
-        addSubview(backView)
-        
-        backView.addSubview(pictureView)
-        backView.addSubview(headlineLabel)
-        backView.addSubview(descriptionLabel)
         
     }
 
