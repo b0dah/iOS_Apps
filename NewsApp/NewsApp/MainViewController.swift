@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-
+    var tableView = UITableView()
     
     // MARK: - Live Cycle
     
@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         fetchArticles()
+        createTableViewUI()
     }
     
 

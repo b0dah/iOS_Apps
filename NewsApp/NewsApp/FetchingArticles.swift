@@ -32,7 +32,7 @@ extension MainViewController {
                 let jsonDecoder = JSONDecoder()
                 let articles = try jsonDecoder.decode(FetchedObject.self, from: data)
                 print("+", articles)
-                print(articles.articles[0].headline)
+                print(articles.articles[0].imageUrl)
             }
             catch {
                 print("smt wrong while decoding")

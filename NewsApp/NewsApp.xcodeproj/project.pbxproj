@@ -16,6 +16,11 @@
 		BCB22E4522E8D4B100991D2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4422E8D4B100991D2A /* MainViewController.swift */; };
 		BCB22E4722E8DDAF00991D2A /* URLStructExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */; };
 		BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4822E8DE5700991D2A /* QueryParameters.swift */; };
+		BCB22E4B22E903C200991D2A /* ImageDownloadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */; };
+		BCB22E4E22E9063000991D2A /* articlesDataModule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4C22E9063000991D2A /* articlesDataModule.xcdatamodeld */; };
+		BCB22E5022E971CE00991D2A /* TableViewImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */; };
+		BCB22E5222E9723B00991D2A /* TableViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E5122E9723B00991D2A /* TableViewUI.swift */; };
+		BCB22E5422E978AA00991D2A /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E5322E978AA00991D2A /* ArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		BCB22E4422E8D4B100991D2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStructExtension.swift; sourceTree = "<group>"; };
 		BCB22E4822E8DE5700991D2A /* QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameters.swift; sourceTree = "<group>"; };
+		BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadingExtension.swift; sourceTree = "<group>"; };
+		BCB22E4D22E9063000991D2A /* articlesDataModule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = articlesDataModule.xcdatamodel; sourceTree = "<group>"; };
+		BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewImplementation.swift; sourceTree = "<group>"; };
+		BCB22E5122E9723B00991D2A /* TableViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUI.swift; sourceTree = "<group>"; };
+		BCB22E5322E978AA00991D2A /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,15 +73,20 @@
 			isa = PBXGroup;
 			children = (
 				BCB22E4422E8D4B100991D2A /* MainViewController.swift */,
+				BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */,
+				BCB22E5122E9723B00991D2A /* TableViewUI.swift */,
+				BCB22E5322E978AA00991D2A /* ArticleCell.swift */,
 				BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */,
 				BCB22E4022E8CFE800991D2A /* ArticleClass.swift */,
 				BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */,
+				BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */,
 				BCB22E3522E8CF6600991D2A /* Assets.xcassets */,
 				BCB22E3222E8CF6400991D2A /* Main.storyboard */,
 				BCB22E3722E8CF6600991D2A /* LaunchScreen.storyboard */,
 				BCB22E3A22E8CF6600991D2A /* Info.plist */,
 				BCB22E4822E8DE5700991D2A /* QueryParameters.swift */,
 				BCB22E2E22E8CF6400991D2A /* AppDelegate.swift */,
+				BCB22E4C22E9063000991D2A /* articlesDataModule.xcdatamodeld */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -152,7 +167,12 @@
 				BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */,
 				BCB22E2F22E8CF6400991D2A /* AppDelegate.swift in Sources */,
 				BCB22E4722E8DDAF00991D2A /* URLStructExtension.swift in Sources */,
+				BCB22E4B22E903C200991D2A /* ImageDownloadingExtension.swift in Sources */,
+				BCB22E5022E971CE00991D2A /* TableViewImplementation.swift in Sources */,
+				BCB22E4E22E9063000991D2A /* articlesDataModule.xcdatamodeld in Sources */,
 				BCB22E4522E8D4B100991D2A /* MainViewController.swift in Sources */,
+				BCB22E5222E9723B00991D2A /* TableViewUI.swift in Sources */,
+				BCB22E5422E978AA00991D2A /* ArticleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCB22E4C22E9063000991D2A /* articlesDataModule.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCB22E4D22E9063000991D2A /* articlesDataModule.xcdatamodel */,
+			);
+			currentVersion = BCB22E4D22E9063000991D2A /* articlesDataModule.xcdatamodel */;
+			path = articlesDataModule.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCB22E2322E8CF6400991D2A /* Project object */;
 }
