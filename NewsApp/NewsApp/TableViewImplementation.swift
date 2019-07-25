@@ -23,8 +23,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
         
         cell.pictureView.image = UIImage(named: "imageName")
-        cell.headlineLabel.text = "headlineLabel     headlineLabel"
-        cell.descriptionLabel.text = "descriptionLabel    descriptionLabel"
+        cell.headlineLabel.text = "headlineLabel     headlineLabel headlineLabel headlineLabel headlineLabel headlineLabel  headlineLabel"
+        cell.descriptionLabel.text = "descriptionLabel    descriptionLabel  descriptionLabel        descriptionLabel    descriptionLabel"
         
         return cell
     }
