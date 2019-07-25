@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				BCB22E4422E8D4B100991D2A /* MainViewController.swift */,
-				BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */,
 				BCB22E5122E9723B00991D2A /* TableViewUI.swift */,
+				BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */,
 				BCB22E5322E978AA00991D2A /* ArticleCell.swift */,
 				BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */,
 				BCB22E4022E8CFE800991D2A /* ArticleClass.swift */,

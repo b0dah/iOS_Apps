@@ -24,6 +24,7 @@ extension MainViewController {
         
         self.view.addSubview(tableView)
         
-        
+        //tableView.rowHeight = UITableView.automaticDimension
+        //tableView.estimatedRowHeight = 100
     }
 }

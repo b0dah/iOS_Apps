@@ -30,7 +30,8 @@ class ArticleCell: UITableViewCell {
     }()
     
     lazy var headlineLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 120, y: cellContentSpacing, width: backView.frame.width - 120, height: 30))
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 18)
         
@@ -56,16 +57,23 @@ class ArticleCell: UITableViewCell {
         
         let margins = self.layoutMarginsGuide
         
+        // MARK: - BackView constraints
         addSubview(backView)
+        backView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        backView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        backView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95).isActive = true
+        backView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9).isActive = true
         
-        backView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
-        backView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10).isActive = true
-        backView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
-        backView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
-        
-        
+        // MARK: - Headline constraints
+        backView.addSubview(headlineLabel)
+        headlineLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 10).isActive = true
+        headlineLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -10).isActive = true
+        headlineLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 20).isActive = true
+        headlineLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
+
+
         //backView.addSubview(pictureView)
-        //backView.addSubview(headlineLabel)
+        
         //backView.addSubview(descriptionLabel)
     }
     
