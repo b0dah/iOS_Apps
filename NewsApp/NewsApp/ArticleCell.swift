@@ -15,7 +15,7 @@ class ArticleCell: UITableViewCell {
     
     
     lazy var backView: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: backViewSpacing, y: backViewSpacing, width: self.frame.width - 2 * backViewSpacing, height: self.frame.height - 2 * backViewSpacing))
         view.backgroundColor = .white
         return view
     }()
@@ -69,11 +69,10 @@ class ArticleCell: UITableViewCell {
         // Configure the view for the selected state
         addSubview(backView)
         
-        
-        
         backView.addSubview(pictureView)
         backView.addSubview(headlineLabel)
         backView.addSubview(descriptionLabel)
+        
     }
 
 }
