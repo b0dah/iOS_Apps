@@ -15,8 +15,8 @@ class ArticleCell: UITableViewCell {
     
     
     lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: backViewSpacing, y: backViewSpacing, width: self.frame.width - 2 * backViewSpacing, height: self.frame.height - 2 * backViewSpacing))
-        view.backgroundColor = .orange
+        let view = UIView()
+        view.backgroundColor = .white
         return view
     }()
 
@@ -47,9 +47,16 @@ class ArticleCell: UITableViewCell {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         backView.layer.cornerRadius = 8
+        
     }
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,6 +68,9 @@ class ArticleCell: UITableViewCell {
 
         // Configure the view for the selected state
         addSubview(backView)
+        
+        
+        
         backView.addSubview(pictureView)
         backView.addSubview(headlineLabel)
         backView.addSubview(descriptionLabel)

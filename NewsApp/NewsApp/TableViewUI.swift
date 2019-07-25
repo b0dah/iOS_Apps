@@ -14,7 +14,8 @@ extension MainViewController {
         
         tableView.frame = self.view.frame
         tableView.backgroundColor = .green
-        tableView.separatorColor = .clear
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         
         tableView.delegate = self
         tableView.dataSource = self
