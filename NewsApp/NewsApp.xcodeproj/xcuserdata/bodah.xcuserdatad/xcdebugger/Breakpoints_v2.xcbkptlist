@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/ArticleCell.swift"
-            timestampString = "585761004.898362"
+            filePath = "NewsApp/AppDelegate.swift"
+            timestampString = "585776913.79741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "init(style:reuseIdentifier:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "applicationWillResignActive(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -14,8 +14,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // MARK: - attributes for Nav Bar
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 51/255, green: 153/255, blue: 102/255, alpha: 1)
+        
+        UINavigationBar.appearance().tintColor = .white
+        
+        // MARK: - creating a Nav Controller
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let mainViewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        
+        window?.rootViewController = navigationController
+        
         return true
     }
 

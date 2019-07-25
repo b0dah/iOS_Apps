@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC6D8D4F22EA2981007D54E6 /* SearchBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D8D4E22EA2981007D54E6 /* SearchBarUI.swift */; };
+		BC6D8D5122EA3225007D54E6 /* SearchBarImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D8D5022EA3225007D54E6 /* SearchBarImplementation.swift */; };
 		BCB22E2F22E8CF6400991D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E2E22E8CF6400991D2A /* AppDelegate.swift */; };
 		BCB22E3422E8CF6400991D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB22E3222E8CF6400991D2A /* Main.storyboard */; };
 		BCB22E3622E8CF6600991D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB22E3522E8CF6600991D2A /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC6D8D4E22EA2981007D54E6 /* SearchBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarUI.swift; sourceTree = "<group>"; };
+		BC6D8D5022EA3225007D54E6 /* SearchBarImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarImplementation.swift; sourceTree = "<group>"; };
 		BCB22E2B22E8CF6400991D2A /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB22E2E22E8CF6400991D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB22E3322E8CF6400991D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			children = (
 				BCB22E4422E8D4B100991D2A /* MainViewController.swift */,
 				BCB22E5122E9723B00991D2A /* TableViewUI.swift */,
+				BC6D8D4E22EA2981007D54E6 /* SearchBarUI.swift */,
+				BC6D8D5022EA3225007D54E6 /* SearchBarImplementation.swift */,
 				BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */,
 				BCB22E5322E978AA00991D2A /* ArticleCell.swift */,
 				BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */,
@@ -162,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6D8D5122EA3225007D54E6 /* SearchBarImplementation.swift in Sources */,
 				BCB22E4322E8D46E00991D2A /* FetchingArticles.swift in Sources */,
 				BCB22E4122E8CFE800991D2A /* ArticleClass.swift in Sources */,
 				BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */,
@@ -171,6 +178,7 @@
 				BCB22E5022E971CE00991D2A /* TableViewImplementation.swift in Sources */,
 				BCB22E4E22E9063000991D2A /* articlesDataModule.xcdatamodeld in Sources */,
 				BCB22E4522E8D4B100991D2A /* MainViewController.swift in Sources */,
+				BC6D8D4F22EA2981007D54E6 /* SearchBarUI.swift in Sources */,
 				BCB22E5222E9723B00991D2A /* TableViewUI.swift in Sources */,
 				BCB22E5422E978AA00991D2A /* ArticleCell.swift in Sources */,
 			);

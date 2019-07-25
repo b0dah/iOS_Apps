@@ -26,6 +26,7 @@ class ArticleCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         // maintaining aspect ratio
         image.contentMode = .scaleAspectFit
+       
         return image
     }()
     
@@ -52,13 +53,10 @@ class ArticleCell: UITableViewCell {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         backView.layer.cornerRadius = 8
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        let margins = self.layoutMarginsGuide
         
         // MARK: - BackView constraints
         addSubview(backView)
@@ -66,12 +64,20 @@ class ArticleCell: UITableViewCell {
         backView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         backView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95).isActive = true
         backView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9).isActive = true
+        //backView.topAnchor.constraint(equalTo: self.topAnchor)
+        
+        // MARK: - 🖼️ Image View constraints
+        backView.addSubview(pictureView)
+        pictureView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 10).isActive = true
+        pictureView.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -10).isActive = true
+        pictureView.topAnchor.constraint(equalTo: backView.topAnchor, constant: 20).isActive = true
+        pictureView.heightAnchor.constraint(equalToConstant: 250).isActive = true      
         
         // MARK: - Headline constraints
         backView.addSubview(headlineLabel)
-        headlineLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 10).isActive = true
-        headlineLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -10).isActive = true
-        headlineLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 20).isActive = true
+        headlineLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor).isActive = true
+        headlineLabel.trailingAnchor.constraint(equalTo: pictureView.trailingAnchor).isActive = true
+        headlineLabel.topAnchor.constraint(equalTo: pictureView.bottomAnchor, constant: 20).isActive = true
         //headlineLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         
         // MARK: - Description constraints
@@ -81,7 +87,6 @@ class ArticleCell: UITableViewCell {
         descriptionLabel.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 20).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         
-        //backView.addSubview(pictureView)
     }
     
     required init?(coder aDecoder: NSCoder) {

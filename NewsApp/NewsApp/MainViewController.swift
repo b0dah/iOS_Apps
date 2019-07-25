@@ -10,14 +10,18 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    var tableView = UITableView()
+    let tableView = UITableView()
+    let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Live Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         //fetchArticles()
+        setNavigationBar()
+        setUpSearchBar()
         createTableViewUI()
     }
     
