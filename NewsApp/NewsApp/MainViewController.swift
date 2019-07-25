@@ -25,6 +25,12 @@ class MainViewController: UIViewController {
         createTableViewUI()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "Back.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        self.tableView.backgroundColor = UIColor.clear
+    }
 
 }

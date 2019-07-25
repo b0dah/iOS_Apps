@@ -17,7 +17,7 @@ class ArticleCell: UITableViewCell {
     lazy var backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75)
         return view
     }()
 
