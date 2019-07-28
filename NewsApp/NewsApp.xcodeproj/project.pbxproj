@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC54BEC622EE363A00FEF7C9 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54BEC422EE363A00FEF7C9 /* Article+CoreDataClass.swift */; };
-		BC54BEC722EE363A00FEF7C9 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54BEC522EE363A00FEF7C9 /* Article+CoreDataProperties.swift */; };
 		BC6D8D4F22EA2981007D54E6 /* NavigationBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D8D4E22EA2981007D54E6 /* NavigationBarUI.swift */; };
 		BC6D8D5122EA3225007D54E6 /* SearchBarImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D8D5022EA3225007D54E6 /* SearchBarImplementation.swift */; };
+		BCAEC1F122EE44970011D2C7 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC1ED22EE44970011D2C7 /* Article+CoreDataClass.swift */; };
+		BCAEC1F222EE44970011D2C7 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC1EE22EE44970011D2C7 /* Article+CoreDataProperties.swift */; };
+		BCAEC1F322EE44970011D2C7 /* FetchedObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC1EF22EE44970011D2C7 /* FetchedObject+CoreDataClass.swift */; };
+		BCAEC1F422EE44970011D2C7 /* FetchedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC1F022EE44970011D2C7 /* FetchedObject+CoreDataProperties.swift */; };
 		BCB22E2F22E8CF6400991D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E2E22E8CF6400991D2A /* AppDelegate.swift */; };
 		BCB22E3422E8CF6400991D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB22E3222E8CF6400991D2A /* Main.storyboard */; };
 		BCB22E3622E8CF6600991D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB22E3522E8CF6600991D2A /* Assets.xcassets */; };
@@ -28,10 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC54BEC422EE363A00FEF7C9 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BC54BEC522EE363A00FEF7C9 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC6D8D4E22EA2981007D54E6 /* NavigationBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarUI.swift; sourceTree = "<group>"; };
 		BC6D8D5022EA3225007D54E6 /* SearchBarImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarImplementation.swift; sourceTree = "<group>"; };
+		BCAEC1ED22EE44970011D2C7 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCAEC1EE22EE44970011D2C7 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCAEC1EF22EE44970011D2C7 /* FetchedObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCAEC1F022EE44970011D2C7 /* FetchedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FetchedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCB22E2B22E8CF6400991D2A /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB22E2E22E8CF6400991D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB22E3322E8CF6400991D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,8 +90,10 @@
 		BC54BEC222EE2B7500FEF7C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BC54BEC422EE363A00FEF7C9 /* Article+CoreDataClass.swift */,
-				BC54BEC522EE363A00FEF7C9 /* Article+CoreDataProperties.swift */,
+				BCAEC1ED22EE44970011D2C7 /* Article+CoreDataClass.swift */,
+				BCAEC1EE22EE44970011D2C7 /* Article+CoreDataProperties.swift */,
+				BCAEC1EF22EE44970011D2C7 /* FetchedObject+CoreDataClass.swift */,
+				BCAEC1F022EE44970011D2C7 /* FetchedObject+CoreDataProperties.swift */,
 				BCB22E4022E8CFE800991D2A /* ArticleClass.swift */,
 				BCB22E4C22E9063000991D2A /* articlesDataModule.xcdatamodeld */,
 			);
@@ -208,7 +214,7 @@
 			files = (
 				BC6D8D5122EA3225007D54E6 /* SearchBarImplementation.swift in Sources */,
 				BCB22E4322E8D46E00991D2A /* FetchingArticles.swift in Sources */,
-				BC54BEC622EE363A00FEF7C9 /* Article+CoreDataClass.swift in Sources */,
+				BCAEC1F122EE44970011D2C7 /* Article+CoreDataClass.swift in Sources */,
 				BCB22E4122E8CFE800991D2A /* ArticleClass.swift in Sources */,
 				BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */,
 				BCB22E2F22E8CF6400991D2A /* AppDelegate.swift in Sources */,
@@ -216,10 +222,12 @@
 				BCB22E4B22E903C200991D2A /* ImageDownloadingExtension.swift in Sources */,
 				BCB22E5022E971CE00991D2A /* TableViewImplementation.swift in Sources */,
 				BCB22E4E22E9063000991D2A /* articlesDataModule.xcdatamodeld in Sources */,
+				BCAEC1F422EE44970011D2C7 /* FetchedObject+CoreDataProperties.swift in Sources */,
 				BCB22E4522E8D4B100991D2A /* MainViewController.swift in Sources */,
-				BC54BEC722EE363A00FEF7C9 /* Article+CoreDataProperties.swift in Sources */,
+				BCAEC1F222EE44970011D2C7 /* Article+CoreDataProperties.swift in Sources */,
 				BC6D8D4F22EA2981007D54E6 /* NavigationBarUI.swift in Sources */,
 				BCB22E5222E9723B00991D2A /* TableViewUI.swift in Sources */,
+				BCAEC1F322EE44970011D2C7 /* FetchedObject+CoreDataClass.swift in Sources */,
 				BCB22E5422E978AA00991D2A /* ArticleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

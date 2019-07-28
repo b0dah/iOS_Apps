@@ -1,5 +1,5 @@
 //
-//  Article+CoreDataClass.swift
+//  FetchedObject+CoreDataClass.swift
 //  NewsApp
 //
 //  Created by Иван Романов on 29/07/2019.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class Article: NSManagedObject {
+public class FetchedObject: NSManagedObject {
 
 }

@@ -2,7 +2,7 @@
 //  Article+CoreDataProperties.swift
 //  NewsApp
 //
-//  Created by Иван Романов on 28/07/2019.
+//  Created by Иван Романов on 29/07/2019.
 //  Copyright © 2019 Иван Романов. All rights reserved.
 //
 //
@@ -18,8 +18,9 @@ extension Article {
     }
 
     @NSManaged public var body: String?
+    @NSManaged public var date: NSDate?
     @NSManaged public var headline: String?
     @NSManaged public var imageUrl: String?
-    @NSManaged public var date: NSDate?
+    @NSManaged public var fetchedObject: FetchedObject?
 
 }

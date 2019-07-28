@@ -5,8 +5,14 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="headline" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" attributeType="String" syncable="YES"/>
+        <relationship name="fetchedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FetchedObject" inverseName="article" inverseEntity="FetchedObject" syncable="YES"/>
+    </entity>
+    <entity name="FetchedObject" representedClassName=".FetchedObject" syncable="YES">
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="article" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="fetchedObject" inverseEntity="Article" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Article" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Article" positionX="-210.6328125" positionY="127.55859375" width="128" height="118"/>
+        <element name="FetchedObject" positionX="-63" positionY="9" width="156.49609375" height="73"/>
     </elements>
 </model>
