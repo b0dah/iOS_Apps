@@ -39,16 +39,16 @@ extension MainViewController: UISearchBarDelegate, UISearchDisplayDelegate {
             }
         }
         else {
-            let delegate = UIApplication.shared.delegate as! AppDelegate
-            let context = delegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
-            
-            do {
-                self.articleEntities = try context.fetch(fetchRequest) as! [ArticleEntity]
-            } catch {
-                print("Coudnt get search data")
-            }
-            
+//            let delegate = UIApplication.shared.delegate as! AppDelegate
+//            let context = delegate.persistentContainer.viewContext
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
+//
+//            do {
+//                self.articleEntities = try context.fetch(fetchRequest) as! [ArticleEntity]
+//            } catch {
+//                print("Coudnt get search data")
+//            }
+            self.fetchArticles()
         }
         self.tableView.reloadData()
     }
@@ -62,16 +62,8 @@ extension MainViewController: UISearchBarDelegate, UISearchDisplayDelegate {
         // Remove focus from the search bar.
         searchBar.endEditing(true)
         // and eventually reload the Table View
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let context = delegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
-
-        do {
-            self.articleEntities = try context.fetch(fetchRequest) as! [ArticleEntity]
-        } catch {
-            print("Coudnt get search data")
-        }
-        self.tableView.reloadData()
+        
+        self.fetchArticles() // Doesn't work correctly :(
     }
     
 
