@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         request.returnsObjectsAsFaults = false
         
         do {
-            let result = try context.fetch(request)
+            let result = try context.fetch(request)  
             
             for data in result as! [NSManagedObject] {
                 message = data.value(forKey: "message") as! String
