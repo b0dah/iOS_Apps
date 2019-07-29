@@ -33,7 +33,12 @@ extension MainViewController {
                 let fetchedObject = try jsonDecoder.decode(FetchedObject.self, from: data)
                 
                 self.articles = fetchedObject.articles
-
+                
+                DispatchQueue.main.async {
+                    self.saveDataToDataBase() // ***
+                    self.tableView.reloadData()
+                }
+                
                 print("+", fetchedObject)
                 print(fetchedObject.articles[0].imageUrl)
             }

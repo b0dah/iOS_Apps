@@ -45,13 +45,15 @@ extension MainViewController {
         
         if let context = delegate?.persistentContainer.viewContext {
         
-            let firstOne = NSEntityDescription.insertNewObject(forEntityName: "ArticleEntity", into: context) as! ArticleEntity
+            for eachArticle in self.articles {
+                
+                let currentObject = NSEntityDescription.insertNewObject(forEntityName: "ArticleEntity", into: context) as! ArticleEntity
 
-
-            firstOne.headline = "HEADLINE"
-            firstOne.body = "jopr"
-            firstOne.date = "378"
-            firstOne.imageUrl = "sdds"
+                currentObject.headline = eachArticle.headline
+                currentObject.body = eachArticle.body
+                currentObject.date = eachArticle.imageUrl
+                currentObject.imageUrl = eachArticle.date
+            }
             
             do {
                 try context.save()
@@ -75,9 +77,12 @@ extension MainViewController {
             fetchRequest.returnsObjectsAsFaults = false
         
             do {
-                let articaaal = try context.fetch(fetchRequest) as? [ArticleEntity] //!!! let articaaal = try (context.execute(fetchRequest) as? [ArticleEntity])
+                let object = try context.fetch(fetchRequest) as? [ArticleEntity] //!!! let articaaal = try (context.execute(fetchRequest) as? [ArticleEntity])
+                self.articleEntities = object!
+                
                 print("fetched from the DB")
-                print(" -> ", articaaal?.last?.headline)
+                print(" -> ", object?.count)
+            
             } catch let error {
                 print(error)
             }

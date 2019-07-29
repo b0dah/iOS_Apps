@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     
     var articles = [Article]()
+    var articleEntities = [ArticleEntity]()
     
 
     let tableView = UITableView()
@@ -23,9 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        //fetchArticles()
-        saveDataToDataBase()
+        fetchArticles()
         
         setNavigationBar()
         setUpSearchBar()

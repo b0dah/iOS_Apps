@@ -11,7 +11,7 @@ import UIKit
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return articleEntities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -21,10 +21,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
 
-        
+        cell.updateUIwithData(currentItem: articleEntities[indexPath.row])
         cell.pictureView.image = UIImage(named: "imageName")
-        cell.headlineLabel.text = "headlineLabel     headlineLabel headlineLabel headlineLabel headlineLabel headlineLabel  headlineLabel"
-        cell.descriptionLabel.text = "descriptionLabel    descriptionLabel  descriptionLabel        descriptionLabel    descriptionLabel"
         
         return cell
     }

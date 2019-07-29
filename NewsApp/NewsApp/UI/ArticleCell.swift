@@ -49,12 +49,22 @@ class ArticleCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - seting labels values
+    func updateUIwithData(currentItem: ArticleEntity) {
+        
+        self.headlineLabel.text = currentItem.headline
+        self.descriptionLabel.text = currentItem.headline
+        
+    }
+    
+    
     override func layoutSubviews() {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         backView.layer.cornerRadius = 8
     }
     
+    // MARK: - Setting Layout
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
