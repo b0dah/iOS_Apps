@@ -2,7 +2,7 @@
 
 import UIKit
 
-/*class FetchedObject: Codable {
+class FetchedObject: Codable {
     let status: String
     let source: String
     let sortBy: String
@@ -35,6 +35,6 @@ class Article: Codable {
         self.imageUrl = imageUrl
         self.date = date
     }
-}*/
+}
 
 

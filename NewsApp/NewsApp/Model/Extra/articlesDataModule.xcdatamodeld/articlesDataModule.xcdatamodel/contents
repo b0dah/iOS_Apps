@@ -2,14 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Article" representedClassName=".Article" syncable="YES">
         <attribute name="body" attributeType="String" syncable="YES"/>
-        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="date" attributeType="String" syncable="YES"/>
         <attribute name="headline" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" attributeType="String" syncable="YES"/>
-        <relationship name="fetchedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FetchedObject" inverseName="article" inverseEntity="FetchedObject" syncable="YES"/>
+        <relationship name="fetchedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FetchedObject" inverseName="articles" inverseEntity="FetchedObject" syncable="YES"/>
     </entity>
     <entity name="FetchedObject" representedClassName=".FetchedObject" syncable="YES">
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="article" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="fetchedObject" inverseEntity="Article" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="fetchedObject" inverseEntity="Article" syncable="YES"/>
     </entity>
     <elements>
         <element name="Article" positionX="-210.6328125" positionY="127.55859375" width="128" height="118"/>

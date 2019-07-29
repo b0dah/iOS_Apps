@@ -9,6 +9,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var articles = [Article]()
+    
 
     let tableView = UITableView()
     let searchController = UISearchController(searchResultsController: nil)
@@ -20,6 +23,8 @@ class MainViewController: UIViewController {
 
         
         //fetchArticles()
+        saveDataToDataBase()
+        
         setNavigationBar()
         setUpSearchBar()
         createTableViewUI()

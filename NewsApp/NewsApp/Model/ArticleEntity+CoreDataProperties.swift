@@ -1,5 +1,5 @@
 //
-//  Article+CoreDataProperties.swift
+//  ArticleEntity+CoreDataProperties.swift
 //  NewsApp
 //
 //  Created by Иван Романов on 29/07/2019.
@@ -11,16 +11,15 @@ import Foundation
 import CoreData
 
 
-extension Article {
+extension ArticleEntity {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Article> {
-        return NSFetchRequest<Article>(entityName: "Article")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ArticleEntity> {
+        return NSFetchRequest<ArticleEntity>(entityName: "ArticleEntity")
     }
 
     @NSManaged public var body: String?
-    @NSManaged public var date: NSDate?
+    @NSManaged public var date: String?
     @NSManaged public var headline: String?
     @NSManaged public var imageUrl: String?
-    @NSManaged public var fetchedObject: FetchedObject?
 
 }
