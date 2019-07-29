@@ -16,7 +16,7 @@ extension MainViewController {
 
         let query : [String: String] = [
             "source": "techcrunch",
-            "apiKey": "d8b23d8849114ea387fa690586fb7a57",
+            "apiKey": "cd86ecda9cbf4320adf5c0372a0a4c4c" //"d8b23d8849114ea387fa690586fb7a57"
         ]
 
         let url = baseUrl.withQueries(query)!
@@ -34,11 +34,17 @@ extension MainViewController {
                 
                 self.articles = fetchedObject.articles
                 
+                guard !self.tabbleViewDidUpdated else { return }
+                
+                    self.tabbleViewDidUpdated = true
+                
                 DispatchQueue.main.async {
                     self.saveDataToDataBase() // ***
                     //self.tableView.reloadData()
                 }
-                print(fetchedObject.articles[0].imageUrl)
+                
+                
+                print(fetchedObject.articles[0].date)
             }
             catch {
                 print("smt wrong while decoding")

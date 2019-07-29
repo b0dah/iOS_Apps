@@ -81,8 +81,10 @@ extension MainViewController {
                 self.articleEntities = object!
                 
                 DispatchQueue.main.async {
+                    if !self.tabbleViewDidUpdated {
+                        self.fetchArticles()
+                    }
                     self.tableView.reloadData()
-                    self.fetchArticles()
                 }
                 
                 

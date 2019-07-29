@@ -41,7 +41,7 @@ class ArticleCell: UITableViewCell {
     }()
     
     lazy var descriptionLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 120, y: 50, width: backView.frame.width - 120, height: 30))
+        let label = UILabel()
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)

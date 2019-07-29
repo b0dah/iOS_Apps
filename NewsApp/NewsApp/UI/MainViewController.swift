@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    
+    var tabbleViewDidUpdated = false
     
     var articles = [Article]()
     var articleEntities = [ArticleEntity]()
@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //fetchArticles()
         FetchDataFromDataBase()
         
         setNavigationBar()
