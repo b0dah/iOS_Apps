@@ -18,7 +18,7 @@ extension ArticleEntity {
     }
 
     @NSManaged public var body: String?
-    @NSManaged public var date: String?
+    @NSManaged public var date: NSDate?
     @NSManaged public var headline: String?
     @NSManaged public var imageUrl: String?
 

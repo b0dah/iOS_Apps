@@ -51,7 +51,13 @@ extension MainViewController {
 
                 currentObject.headline = eachArticle.headline
                 currentObject.body = eachArticle.body
-                currentObject.date = eachArticle.date
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                guard let date = dateFormatter.date(from: eachArticle.date ) else {
+                    fatalError("ERROR: Date conversion failed due to mismatched format.")
+                }
+                currentObject.date = date as NSDate
                 currentObject.imageUrl = eachArticle.imageUrl
             }
             
@@ -75,9 +81,10 @@ extension MainViewController {
         
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
             fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
             do {
-                let object = try context.fetch(fetchRequest) as? [ArticleEntity] //!!! let articaaal = try (context.execute(fetchRequest) as? [ArticleEntity])
+                let object = try context.fetch(fetchRequest) as? [ArticleEntity] 
                 self.articleEntities = object!
                 
                 DispatchQueue.main.async {
@@ -87,7 +94,7 @@ extension MainViewController {
                     self.tableView.reloadData()
                 }
                 
-                self.articleEntities.sorted { $0.date <  }
+                
                 //print("fetched from the DB \(object?.count) items")
                 //print("urlToImage is ... ", object?[0].imageUrl)
             

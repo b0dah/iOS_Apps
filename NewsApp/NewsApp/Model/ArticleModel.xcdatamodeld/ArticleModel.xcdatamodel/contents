@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ArticleEntity" representedClassName="ArticleEntity" syncable="YES">
         <attribute name="body" attributeType="String" syncable="YES"/>
-        <attribute name="date" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="headline" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" attributeType="String" syncable="YES"/>
     </entity>
