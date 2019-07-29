@@ -22,7 +22,6 @@
 		BCB22E4322E8D46E00991D2A /* FetchingArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */; };
 		BCB22E4522E8D4B100991D2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4422E8D4B100991D2A /* MainViewController.swift */; };
 		BCB22E4722E8DDAF00991D2A /* URLStructExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */; };
-		BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4822E8DE5700991D2A /* QueryParameters.swift */; };
 		BCB22E4B22E903C200991D2A /* ImageDownloadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */; };
 		BCB22E5022E971CE00991D2A /* TableViewImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */; };
 		BCB22E5222E9723B00991D2A /* TableViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB22E5122E9723B00991D2A /* TableViewUI.swift */; };
@@ -47,7 +46,6 @@
 		BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingArticles.swift; sourceTree = "<group>"; };
 		BCB22E4422E8D4B100991D2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStructExtension.swift; sourceTree = "<group>"; };
-		BCB22E4822E8DE5700991D2A /* QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameters.swift; sourceTree = "<group>"; };
 		BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadingExtension.swift; sourceTree = "<group>"; };
 		BCB22E4F22E971CE00991D2A /* TableViewImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewImplementation.swift; sourceTree = "<group>"; };
 		BCB22E5122E9723B00991D2A /* TableViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUI.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			children = (
 				BCB22E4222E8D46E00991D2A /* FetchingArticles.swift */,
 				BCB22E4622E8DDAF00991D2A /* URLStructExtension.swift */,
-				BCB22E4822E8DE5700991D2A /* QueryParameters.swift */,
 				BCB22E4A22E903C200991D2A /* ImageDownloadingExtension.swift */,
 			);
 			path = API;
@@ -242,7 +239,6 @@
 				BCAEC1FC22EE60D60011D2C7 /* ArticleModel.xcdatamodeld in Sources */,
 				BCAEC20222EE6A3C0011D2C7 /* CoreDataHelper.swift in Sources */,
 				BCB22E4122E8CFE800991D2A /* ArticleClass.swift in Sources */,
-				BCB22E4922E8DE5700991D2A /* QueryParameters.swift in Sources */,
 				BCB22E2F22E8CF6400991D2A /* AppDelegate.swift in Sources */,
 				BCB22E4722E8DDAF00991D2A /* URLStructExtension.swift in Sources */,
 				BCB22E4B22E903C200991D2A /* ImageDownloadingExtension.swift in Sources */,

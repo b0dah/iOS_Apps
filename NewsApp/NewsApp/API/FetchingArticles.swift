@@ -36,10 +36,8 @@ extension MainViewController {
                 
                 DispatchQueue.main.async {
                     self.saveDataToDataBase() // ***
-                    self.tableView.reloadData()
+                    //self.tableView.reloadData()
                 }
-                
-                print("+", fetchedObject)
                 print(fetchedObject.articles[0].imageUrl)
             }
             catch {

@@ -80,6 +80,12 @@ extension MainViewController {
                 let object = try context.fetch(fetchRequest) as? [ArticleEntity] //!!! let articaaal = try (context.execute(fetchRequest) as? [ArticleEntity])
                 self.articleEntities = object!
                 
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.fetchArticles()
+                }
+                
+                
                 print("fetched from the DB \(object?.count) items")
                 print("urlToImage is ... ", object?[0].imageUrl)
             
