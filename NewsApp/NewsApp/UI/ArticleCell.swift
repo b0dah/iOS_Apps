@@ -49,12 +49,28 @@ class ArticleCell: UITableViewCell {
         return label
     }()
     
+    lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .right
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textColor = UIColor(red: 210/255, green: 89/255, blue: 1/255, alpha: 0.8)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: - seting labels values
     func updateUIwithData(currentItem: ArticleEntity) {
         
         self.headlineLabel.text = currentItem.headline
         self.descriptionLabel.text = currentItem.headline
         
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let stringDate: String = dateFormatter.string(from: (currentItem.date as! NSDate) as Date)
+        self.dateLabel.text = stringDate
+            
         self.pictureView.downloadImage(from: currentItem.imageUrl!)
     }
 
@@ -95,7 +111,14 @@ class ArticleCell: UITableViewCell {
         descriptionLabel.leadingAnchor.constraint(equalTo: headlineLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: headlineLabel.trailingAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 20).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
+        //descriptionLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
+        
+        // MARK : - Date section constraints
+        backView.addSubview(dateLabel)
+        dateLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -10).isActive = true
         
     }
     

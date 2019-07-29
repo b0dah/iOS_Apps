@@ -44,7 +44,7 @@ extension MainViewController {
                 }
                 
                 
-                print(fetchedObject.articles[0].date)
+                //print(fetchedObject.articles[0].date)
             }
             catch {
                 print("smt wrong while decoding")

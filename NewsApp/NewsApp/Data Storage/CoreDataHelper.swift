@@ -12,7 +12,6 @@ import CoreData
 
 extension MainViewController {
     
-    
     func clearDataBaseData() {
         
         let delegate = (UIApplication.shared.delegate as? AppDelegate)
@@ -84,7 +83,7 @@ extension MainViewController {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
             do {
-                let object = try context.fetch(fetchRequest) as? [ArticleEntity] 
+                let object = try context.fetch(fetchRequest) as? [ArticleEntity]
                 self.articleEntities = object!
                 
                 DispatchQueue.main.async {
