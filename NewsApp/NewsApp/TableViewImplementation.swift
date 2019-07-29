@@ -22,7 +22,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         cell.updateUIwithData(currentItem: articleEntities[indexPath.row])
-        cell.pictureView.image = UIImage(named: "imageName")
+        //cell.pictureView.image = UIImage(named: "imageName")
         
         return cell
     }

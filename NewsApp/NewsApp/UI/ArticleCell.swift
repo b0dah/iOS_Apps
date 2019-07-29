@@ -55,6 +55,9 @@ class ArticleCell: UITableViewCell {
         self.headlineLabel.text = currentItem.headline
         self.descriptionLabel.text = currentItem.headline
         
+        
+        self.pictureView.downloadImage(from: currentItem.imageUrl!)
+
     }
     
     

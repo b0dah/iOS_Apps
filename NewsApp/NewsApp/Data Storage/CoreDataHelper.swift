@@ -51,8 +51,8 @@ extension MainViewController {
 
                 currentObject.headline = eachArticle.headline
                 currentObject.body = eachArticle.body
-                currentObject.date = eachArticle.imageUrl
-                currentObject.imageUrl = eachArticle.date
+                currentObject.date = eachArticle.date
+                currentObject.imageUrl = eachArticle.imageUrl
             }
             
             do {
@@ -80,8 +80,8 @@ extension MainViewController {
                 let object = try context.fetch(fetchRequest) as? [ArticleEntity] //!!! let articaaal = try (context.execute(fetchRequest) as? [ArticleEntity])
                 self.articleEntities = object!
                 
-                print("fetched from the DB")
-                print(" -> ", object?.count)
+                print("fetched from the DB \(object?.count) items")
+                print("urlToImage is ... ", object?[0].imageUrl)
             
             } catch let error {
                 print(error)
