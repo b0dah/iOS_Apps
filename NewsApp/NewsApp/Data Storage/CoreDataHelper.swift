@@ -87,9 +87,9 @@ extension MainViewController {
                     self.tableView.reloadData()
                 }
                 
-                
-                print("fetched from the DB \(object?.count) items")
-                print("urlToImage is ... ", object?[0].imageUrl)
+                self.articleEntities.sorted { $0.date <  }
+                //print("fetched from the DB \(object?.count) items")
+                //print("urlToImage is ... ", object?[0].imageUrl)
             
             } catch let error {
                 print(error)
