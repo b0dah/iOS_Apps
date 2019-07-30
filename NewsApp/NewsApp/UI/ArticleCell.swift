@@ -104,14 +104,13 @@ class ArticleCell: UITableViewCell {
         headlineLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor).isActive = true
         headlineLabel.trailingAnchor.constraint(equalTo: pictureView.trailingAnchor).isActive = true
         headlineLabel.topAnchor.constraint(equalTo: pictureView.bottomAnchor, constant: 20).isActive = true
-        //headlineLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
+
         
         // MARK: - Description constraints
         backView.addSubview(descriptionLabel)
         descriptionLabel.leadingAnchor.constraint(equalTo: headlineLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: headlineLabel.trailingAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 20).isActive = true
-        //descriptionLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         
         // MARK : - Date section constraints
         backView.addSubview(dateLabel)

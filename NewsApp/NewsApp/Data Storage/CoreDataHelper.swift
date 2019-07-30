@@ -80,6 +80,7 @@ extension MainViewController {
         
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleEntity")
             fetchRequest.returnsObjectsAsFaults = false
+            // sorting
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
             do {
@@ -92,10 +93,6 @@ extension MainViewController {
                     }
                     self.tableView.reloadData()
                 }
-                
-                
-                //print("fetched from the DB \(object?.count) items")
-                //print("urlToImage is ... ", object?[0].imageUrl)
             
             } catch let error {
                 print(error)

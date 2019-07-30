@@ -40,11 +40,7 @@ extension MainViewController {
                 
                 DispatchQueue.main.async {
                     self.saveDataToDataBase() // ***
-                    //self.tableView.reloadData()
                 }
-                
-                
-                //print(fetchedObject.articles[0].date)
             }
             catch {
                 print("smt wrong while decoding")
