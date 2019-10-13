@@ -14,17 +14,38 @@ class ViewController: UIViewController {
     
     @IBAction func didSendButtonClick(_ sender: UIButton) {
         
-        let initialUrl = URL(string: "https://api.nasa.gov/planetary/apod")!
+        guard let initialUrl = URL(string: "https://api.nasa.gov/planetary/apod") else {
+            print("wrong url")
+            return
+        }
         
         let parameters: [String : String] = [ "api_key" : "DEMO_KEY",
                                               "date" : "2011-07-13"]
         
-        let url = initialUrl.withQueries(parameters)!
+        var request = URLRequest(url: initialUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            print("wrong parameters")
+            return
+        }
+        request.httpBody = httpBody
+       
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data{
-                let stringData = String(data: data, encoding: .utf8)
-                print(stringData)
+                
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                        let name = json["Name"] as? String {
+                            print(json)
+                            DispatchQueue.main.async {
+                                self.responseLabel.text = name
+                        }
+                    }
+                } catch {
+                    print("*** that's error", error)
+                }
             }
         }
         
