@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var requestParameterField: UITextField!
     @IBOutlet var responseLabel: UILabel!
     
+    @IBOutlet var orangeView: UIView!
     @IBAction func didSendButtonClick(_ sender: UIButton) {
         
         guard let initialUrl = URL(string: "http://localhost:8080/warning_vhodit_krisa") else {
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
                                             
         var request = URLRequest(url: urlWithParameters)
         request.httpMethod = "GET"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 //        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
 //            print("wrong parameters")
 //            return
@@ -36,16 +37,23 @@ class ViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data{
                 
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {//,
+//                do {
+//                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
 //                        let name = json["Name"] as? String {
 //                            print(json)
-//                            DispatchQueue.main.async {
-//                                self.responseLabel.text = name
-//                        }
-                    }
+////                            DispatchQueue.main.async {
+////                                self.responseLabel.text = name
+////                        }
+//                    }
+//                } catch {
+//                    print("*** that's error", error)
+//                }
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                    //let result = try! JSONDecoder().decode(UserModel.self, from json)
                 } catch {
-                    print("*** that's error", error)
+                    print(error)
                 }
             }
         }
@@ -56,6 +64,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let a = 2
+        self.responseLabel.text = a
+        
+        let width: CGFloat = self.orangeView.bounds.width
+        print("width = ", width)
+        
+        let borderWidth: Double = 2.0
+        
+        //var x: CGFloat
+        for curX in stride(from: 0.0, to: 350.0*2, by: 50.0) {
+            let borderView: UIView = UIView(frame: CGRect.init(x: curX, y: 0.0, width: borderWidth, height: 200.0))
+            borderView.backgroundColor = .gray
+            self.orangeView.addSubview(borderView)
+        }
+        
+        
     }
 
 }

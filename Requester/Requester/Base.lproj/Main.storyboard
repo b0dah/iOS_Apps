@@ -44,11 +44,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5O-3A-qvL">
+                                <rect key="frame" x="10" y="270" width="355" height="127"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TOf-Pf-1w2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Q6-nD-ZLa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E5O-3A-qvL" secondAttribute="bottom" constant="270" id="8oA-wO-hfX"/>
+                            <constraint firstItem="E5O-3A-qvL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B66-eA-DlS"/>
+                            <constraint firstItem="E5O-3A-qvL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gYC-mJ-XvV"/>
                             <constraint firstItem="gMf-8L-b7U" firstAttribute="top" secondItem="TOf-Pf-1w2" secondAttribute="bottom" constant="93" id="hkf-MV-mq9"/>
+                            <constraint firstItem="E5O-3A-qvL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nLP-kJ-q4d"/>
                             <constraint firstItem="khb-t9-sg2" firstAttribute="top" secondItem="gMf-8L-b7U" secondAttribute="bottom" constant="83" id="sy1-Oh-cPU"/>
                             <constraint firstItem="khb-t9-sg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vJp-bJ-4mk"/>
                             <constraint firstItem="gMf-8L-b7U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wNc-A7-Vr4"/>
@@ -57,6 +65,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="orangeView" destination="E5O-3A-qvL" id="1Tl-LY-Ydd"/>
                         <outlet property="requestParameterField" destination="gMf-8L-b7U" id="HL1-Ok-nLH"/>
                         <outlet property="responseLabel" destination="TOf-Pf-1w2" id="rSd-oR-Eah"/>
                     </connections>
