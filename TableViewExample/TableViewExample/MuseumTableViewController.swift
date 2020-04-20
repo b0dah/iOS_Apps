@@ -10,8 +10,8 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = [
-        Emoji(symbol: "☺️", name: "name"), Emoji(symbol: "🙃", name:  "nameeee")]
+    var museums = [
+        Museum(name: "Museum of Contemporary Art Tokyo", city: <#T##String#>)]
 
     
     override func viewDidLoad() {

@@ -8,12 +8,14 @@
 
 import Foundation
 
-class Emoji {
-    var symbol: String
+class Museum {
+    var imageName: String
     var name: String
+    var city: String
     
-    init(symbol: String, name: String) {
-        self.symbol = symbol
+    init(imageName: String, name: String, city: String) {
+        self.imageName = imageName
         self.name = name
+        self.city = city
     }
 }
