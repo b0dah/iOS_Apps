@@ -7,33 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC8F9F5923E4191C00B02F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F5823E4191C00B02F28 /* AppDelegate.swift */; };
-		BC8F9F5B23E4191C00B02F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F5A23E4191C00B02F28 /* SceneDelegate.swift */; };
-		BC8F9F5D23E4191C00B02F28 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F5C23E4191C00B02F28 /* IntroductionViewController.swift */; };
-		BC8F9F6023E4191C00B02F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9F5E23E4191C00B02F28 /* Main.storyboard */; };
-		BC8F9F6223E4192000B02F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9F6123E4192000B02F28 /* Assets.xcassets */; };
-		BC8F9F6523E4192000B02F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8F9F6323E4192000B02F28 /* LaunchScreen.storyboard */; };
-		BC8F9F6D23E457CD00B02F28 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F6C23E457CD00B02F28 /* QuestionViewController.swift */; };
-		BC8F9F6F23E457EF00B02F28 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F6E23E457EF00B02F28 /* ResultViewController.swift */; };
-		BC8F9F7123E464CE00B02F28 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F9F7023E464CE00B02F28 /* QuestionData.swift */; };
+		BC11F749244C8E0500734F60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F748244C8E0500734F60 /* AppDelegate.swift */; };
+		BC11F74B244C8E0500734F60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F74A244C8E0500734F60 /* SceneDelegate.swift */; };
+		BC11F750244C8E0500734F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC11F74E244C8E0500734F60 /* Main.storyboard */; };
+		BC11F752244C8E0700734F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC11F751244C8E0700734F60 /* Assets.xcassets */; };
+		BC11F755244C8E0700734F60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC11F753244C8E0700734F60 /* LaunchScreen.storyboard */; };
+		BC11F75D244C93A100734F60 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75C244C93A100734F60 /* Emoji.swift */; };
+		BC11F75F244C944B00734F60 /* EmojiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */; };
+		BC11F761244C949C00734F60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F760244C949C00734F60 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC8F9F5523E4191C00B02F28 /* PersonalityQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalityQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC8F9F5823E4191C00B02F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC8F9F5A23E4191C00B02F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC8F9F5C23E4191C00B02F28 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
-		BC8F9F5F23E4191C00B02F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC8F9F6123E4192000B02F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC8F9F6423E4192000B02F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC8F9F6623E4192000B02F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC8F9F6C23E457CD00B02F28 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		BC8F9F6E23E457EF00B02F28 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		BC8F9F7023E464CE00B02F28 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		BC11F745244C8E0500734F60 /* TableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC11F748244C8E0500734F60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC11F74A244C8E0500734F60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BC11F74F244C8E0500734F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC11F751244C8E0700734F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC11F754244C8E0700734F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC11F756244C8E0700734F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC11F75C244C93A100734F60 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewController.swift; sourceTree = "<group>"; };
+		BC11F760244C949C00734F60 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC8F9F5223E4191C00B02F28 /* Frameworks */ = {
+		BC11F742244C8E0500734F60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,75 +41,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC8F9F4C23E4191C00B02F28 = {
+		BC11F73C244C8E0500734F60 = {
 			isa = PBXGroup;
 			children = (
-				BC8F9F5723E4191C00B02F28 /* PersonalityQuiz */,
-				BC8F9F5623E4191C00B02F28 /* Products */,
+				BC11F747244C8E0500734F60 /* TableViewExample */,
+				BC11F746244C8E0500734F60 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BC8F9F5623E4191C00B02F28 /* Products */ = {
+		BC11F746244C8E0500734F60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC8F9F5523E4191C00B02F28 /* PersonalityQuiz.app */,
+				BC11F745244C8E0500734F60 /* TableViewExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC8F9F5723E4191C00B02F28 /* PersonalityQuiz */ = {
+		BC11F747244C8E0500734F60 /* TableViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				BC8F9F5823E4191C00B02F28 /* AppDelegate.swift */,
-				BC8F9F5A23E4191C00B02F28 /* SceneDelegate.swift */,
-				BC8F9F5E23E4191C00B02F28 /* Main.storyboard */,
-				BC8F9F5C23E4191C00B02F28 /* IntroductionViewController.swift */,
-				BC8F9F6C23E457CD00B02F28 /* QuestionViewController.swift */,
-				BC8F9F6E23E457EF00B02F28 /* ResultViewController.swift */,
-				BC8F9F7023E464CE00B02F28 /* QuestionData.swift */,
-				BC8F9F6123E4192000B02F28 /* Assets.xcassets */,
-				BC8F9F6323E4192000B02F28 /* LaunchScreen.storyboard */,
-				BC8F9F6623E4192000B02F28 /* Info.plist */,
+				BC11F748244C8E0500734F60 /* AppDelegate.swift */,
+				BC11F75C244C93A100734F60 /* Emoji.swift */,
+				BC11F74A244C8E0500734F60 /* SceneDelegate.swift */,
+				BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */,
+				BC11F760244C949C00734F60 /* TableViewController.swift */,
+				BC11F74E244C8E0500734F60 /* Main.storyboard */,
+				BC11F751244C8E0700734F60 /* Assets.xcassets */,
+				BC11F753244C8E0700734F60 /* LaunchScreen.storyboard */,
+				BC11F756244C8E0700734F60 /* Info.plist */,
 			);
-			path = PersonalityQuiz;
+			path = TableViewExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC8F9F5423E4191C00B02F28 /* PersonalityQuiz */ = {
+		BC11F744244C8E0500734F60 /* TableViewExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC8F9F6923E4192000B02F28 /* Build configuration list for PBXNativeTarget "PersonalityQuiz" */;
+			buildConfigurationList = BC11F759244C8E0700734F60 /* Build configuration list for PBXNativeTarget "TableViewExample" */;
 			buildPhases = (
-				BC8F9F5123E4191C00B02F28 /* Sources */,
-				BC8F9F5223E4191C00B02F28 /* Frameworks */,
-				BC8F9F5323E4191C00B02F28 /* Resources */,
+				BC11F741244C8E0500734F60 /* Sources */,
+				BC11F742244C8E0500734F60 /* Frameworks */,
+				BC11F743244C8E0500734F60 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PersonalityQuiz;
-			productName = PersonalityQuiz;
-			productReference = BC8F9F5523E4191C00B02F28 /* PersonalityQuiz.app */;
+			name = TableViewExample;
+			productName = TableViewExample;
+			productReference = BC11F745244C8E0500734F60 /* TableViewExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC8F9F4D23E4191C00B02F28 /* Project object */ = {
+		BC11F73D244C8E0500734F60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Иван Романов";
 				TargetAttributes = {
-					BC8F9F5423E4191C00B02F28 = {
+					BC11F744244C8E0500734F60 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = BC8F9F5023E4191C00B02F28 /* Build configuration list for PBXProject "PersonalityQuiz" */;
+			buildConfigurationList = BC11F740244C8E0500734F60 /* Build configuration list for PBXProject "TableViewExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,58 +116,57 @@
 				en,
 				Base,
 			);
-			mainGroup = BC8F9F4C23E4191C00B02F28;
-			productRefGroup = BC8F9F5623E4191C00B02F28 /* Products */;
+			mainGroup = BC11F73C244C8E0500734F60;
+			productRefGroup = BC11F746244C8E0500734F60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC8F9F5423E4191C00B02F28 /* PersonalityQuiz */,
+				BC11F744244C8E0500734F60 /* TableViewExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC8F9F5323E4191C00B02F28 /* Resources */ = {
+		BC11F743244C8E0500734F60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC8F9F6523E4192000B02F28 /* LaunchScreen.storyboard in Resources */,
-				BC8F9F6223E4192000B02F28 /* Assets.xcassets in Resources */,
-				BC8F9F6023E4191C00B02F28 /* Main.storyboard in Resources */,
+				BC11F755244C8E0700734F60 /* LaunchScreen.storyboard in Resources */,
+				BC11F752244C8E0700734F60 /* Assets.xcassets in Resources */,
+				BC11F750244C8E0500734F60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC8F9F5123E4191C00B02F28 /* Sources */ = {
+		BC11F741244C8E0500734F60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC8F9F6F23E457EF00B02F28 /* ResultViewController.swift in Sources */,
-				BC8F9F7123E464CE00B02F28 /* QuestionData.swift in Sources */,
-				BC8F9F5D23E4191C00B02F28 /* IntroductionViewController.swift in Sources */,
-				BC8F9F5923E4191C00B02F28 /* AppDelegate.swift in Sources */,
-				BC8F9F6D23E457CD00B02F28 /* QuestionViewController.swift in Sources */,
-				BC8F9F5B23E4191C00B02F28 /* SceneDelegate.swift in Sources */,
+				BC11F75F244C944B00734F60 /* EmojiTableViewController.swift in Sources */,
+				BC11F749244C8E0500734F60 /* AppDelegate.swift in Sources */,
+				BC11F75D244C93A100734F60 /* Emoji.swift in Sources */,
+				BC11F761244C949C00734F60 /* TableViewController.swift in Sources */,
+				BC11F74B244C8E0500734F60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BC8F9F5E23E4191C00B02F28 /* Main.storyboard */ = {
+		BC11F74E244C8E0500734F60 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC8F9F5F23E4191C00B02F28 /* Base */,
+				BC11F74F244C8E0500734F60 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BC8F9F6323E4192000B02F28 /* LaunchScreen.storyboard */ = {
+		BC11F753244C8E0700734F60 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC8F9F6423E4192000B02F28 /* Base */,
+				BC11F754244C8E0700734F60 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +174,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC8F9F6723E4192000B02F28 /* Debug */ = {
+		BC11F757244C8E0700734F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		BC8F9F6823E4192000B02F28 /* Release */ = {
+		BC11F758244C8E0700734F60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,36 +288,36 @@
 			};
 			name = Release;
 		};
-		BC8F9F6A23E4192000B02F28 /* Debug */ = {
+		BC11F75A244C8E0700734F60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCPX4SG3MN;
-				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
+				INFOPLIST_FILE = TableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "e-bodah.PersonalityQuizz";
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bodah.TableViewExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		BC8F9F6B23E4192000B02F28 /* Release */ = {
+		BC11F75B244C8E0700734F60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCPX4SG3MN;
-				INFOPLIST_FILE = PersonalityQuiz/Info.plist;
+				INFOPLIST_FILE = TableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "e-bodah.PersonalityQuizz";
+				PRODUCT_BUNDLE_IDENTIFIER = "e-bodah.TableViewExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,25 +327,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC8F9F5023E4191C00B02F28 /* Build configuration list for PBXProject "PersonalityQuiz" */ = {
+		BC11F740244C8E0500734F60 /* Build configuration list for PBXProject "TableViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC8F9F6723E4192000B02F28 /* Debug */,
-				BC8F9F6823E4192000B02F28 /* Release */,
+				BC11F757244C8E0700734F60 /* Debug */,
+				BC11F758244C8E0700734F60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC8F9F6923E4192000B02F28 /* Build configuration list for PBXNativeTarget "PersonalityQuiz" */ = {
+		BC11F759244C8E0700734F60 /* Build configuration list for PBXNativeTarget "TableViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC8F9F6A23E4192000B02F28 /* Debug */,
-				BC8F9F6B23E4192000B02F28 /* Release */,
+				BC11F75A244C8E0700734F60 /* Debug */,
+				BC11F75B244C8E0700734F60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BC8F9F4D23E4191C00B02F28 /* Project object */;
+	rootObject = BC11F73D244C8E0500734F60 /* Project object */;
 }
