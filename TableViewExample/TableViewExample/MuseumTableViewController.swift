@@ -8,16 +8,25 @@
 
 import UIKit
 
-class EmojiTableViewController: UITableViewController {
+class MuseumTableViewController: UITableViewController {
     
     var museums = [
-        Museum(name: "Museum of Contemporary Art Tokyo", city: <#T##String#>)]
+        Museum(name: "Museum of Contemporary Art Tokyo", city: "Tokyo, Japan"),
+        Museum(name: "Ullens Center for Contemporary Art", city: "Beijing China"),
+        Museum(name: "Museum of Contemporary Art Shanghai", city: "Shanghai Shi, China"),
+        Museum(name: "Afriart Gallery", city: "Kampala, Uganda")
+    ]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.separatorStyle = .none
+        
         navigationItem.leftBarButtonItem = editButtonItem
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Museums"
+//        self.tableView.rowHeight = UITableView.automaticDimension
     }
     
     // setting table view controller
@@ -28,7 +37,7 @@ class EmojiTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return emojis.count
+            return museums.count
         }
         else { // not necess, but it's a template
             return 0
@@ -37,29 +46,37 @@ class EmojiTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "emojiCell", for: indexPath)
-        let emoji = emojis[indexPath.row]
-        
-        cell.textLabel?.text = emoji.symbol + " - " + emoji.name
-        cell.detailTextLabel?.text = emoji.name
-        cell.showsReorderControl = true // REORDERING
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MuseumCell", for: indexPath) as! CustomTableViewCell
+        let museum = museums[indexPath.row]
+        cell.updateUI(with: museum)
         
         return cell
     }
     
     // MARK: Table View Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let emojiTapped = emojis[indexPath.row]
-        print(String(indexPath.row) + " - " + emojiTapped.symbol)
+        performSegue(withIdentifier: "PresentData", sender: self)
     }
+//
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { // REORDERING
+//        let movedEmoji = emojis.remove(at: sourceIndexPath.row)
+//        emojis.insert(movedEmoji, at: destinationIndexPath.row)
+//        tableView.reloadData()
+//    }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { // REORDERING
-        let movedEmoji = emojis.remove(at: sourceIndexPath.row)
-        emojis.insert(movedEmoji, at: destinationIndexPath.row)
-        tableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "PresentData" else {
+            print("NOT A PASS DATA SEGUE")
+            return
+        }
+        print("A PASS DATA SEGUE")
+        let indexPath = tableView.indexPathForSelectedRow!
+        let museum = museums[indexPath.row]
+        
+        if let destination = segue.destination as? DataPresentingViewController {
+            destination.museum = museum
+        }
     }
-    
-    
     
     
 }

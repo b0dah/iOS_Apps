@@ -12,9 +12,13 @@
 		BC11F750244C8E0500734F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC11F74E244C8E0500734F60 /* Main.storyboard */; };
 		BC11F752244C8E0700734F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC11F751244C8E0700734F60 /* Assets.xcassets */; };
 		BC11F755244C8E0700734F60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC11F753244C8E0700734F60 /* LaunchScreen.storyboard */; };
-		BC11F75D244C93A100734F60 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75C244C93A100734F60 /* Emoji.swift */; };
-		BC11F75F244C944B00734F60 /* EmojiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */; };
-		BC11F761244C949C00734F60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F760244C949C00734F60 /* TableViewController.swift */; };
+		BC11F75D244C93A100734F60 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75C244C93A100734F60 /* Museum.swift */; };
+		BC11F75F244C944B00734F60 /* MuseumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F75E244C944B00734F60 /* MuseumTableViewController.swift */; };
+		BC11F761244C949C00734F60 /* TableViewController(Delete).swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F760244C949C00734F60 /* TableViewController(Delete).swift */; };
+		BC11F763244D731E00734F60 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F762244D731E00734F60 /* CustomTableViewCell.swift */; };
+		BC11F765244D735500734F60 /* TableViewCell(Delete).swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F764244D735500734F60 /* TableViewCell(Delete).swift */; };
+		BC11F767244D957800734F60 /* DataPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F766244D957800734F60 /* DataPresentingViewController.swift */; };
+		BC11F76B244DC91C00734F60 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11F76A244DC91C00734F60 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +29,13 @@
 		BC11F751244C8E0700734F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC11F754244C8E0700734F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC11F756244C8E0700734F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC11F75C244C93A100734F60 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewController.swift; sourceTree = "<group>"; };
-		BC11F760244C949C00734F60 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BC11F75C244C93A100734F60 /* Museum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museum.swift; sourceTree = "<group>"; };
+		BC11F75E244C944B00734F60 /* MuseumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumTableViewController.swift; sourceTree = "<group>"; };
+		BC11F760244C949C00734F60 /* TableViewController(Delete).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewController(Delete).swift"; sourceTree = "<group>"; };
+		BC11F762244D731E00734F60 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		BC11F764244D735500734F60 /* TableViewCell(Delete).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell(Delete).swift"; sourceTree = "<group>"; };
+		BC11F766244D957800734F60 /* DataPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPresentingViewController.swift; sourceTree = "<group>"; };
+		BC11F76A244DC91C00734F60 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +69,36 @@
 			isa = PBXGroup;
 			children = (
 				BC11F748244C8E0500734F60 /* AppDelegate.swift */,
-				BC11F75C244C93A100734F60 /* Emoji.swift */,
 				BC11F74A244C8E0500734F60 /* SceneDelegate.swift */,
-				BC11F75E244C944B00734F60 /* EmojiTableViewController.swift */,
-				BC11F760244C949C00734F60 /* TableViewController.swift */,
+				BC11F75E244C944B00734F60 /* MuseumTableViewController.swift */,
+				BC11F766244D957800734F60 /* DataPresentingViewController.swift */,
 				BC11F74E244C8E0500734F60 /* Main.storyboard */,
+				BC11F762244D731E00734F60 /* CustomTableViewCell.swift */,
+				BC11F764244D735500734F60 /* TableViewCell(Delete).swift */,
+				BC11F760244C949C00734F60 /* TableViewController(Delete).swift */,
+				BC11F76E244DCC1800734F60 /* Models */,
+				BC11F76C244DCAE800734F60 /* Extensions */,
 				BC11F751244C8E0700734F60 /* Assets.xcassets */,
 				BC11F753244C8E0700734F60 /* LaunchScreen.storyboard */,
 				BC11F756244C8E0700734F60 /* Info.plist */,
 			);
 			path = TableViewExample;
+			sourceTree = "<group>";
+		};
+		BC11F76C244DCAE800734F60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC11F76A244DC91C00734F60 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BC11F76E244DCC1800734F60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC11F75C244C93A100734F60 /* Museum.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,11 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC11F75F244C944B00734F60 /* EmojiTableViewController.swift in Sources */,
+				BC11F763244D731E00734F60 /* CustomTableViewCell.swift in Sources */,
+				BC11F767244D957800734F60 /* DataPresentingViewController.swift in Sources */,
+				BC11F75F244C944B00734F60 /* MuseumTableViewController.swift in Sources */,
 				BC11F749244C8E0500734F60 /* AppDelegate.swift in Sources */,
-				BC11F75D244C93A100734F60 /* Emoji.swift in Sources */,
-				BC11F761244C949C00734F60 /* TableViewController.swift in Sources */,
+				BC11F75D244C93A100734F60 /* Museum.swift in Sources */,
+				BC11F76B244DC91C00734F60 /* UIImageViewExtension.swift in Sources */,
+				BC11F761244C949C00734F60 /* TableViewController(Delete).swift in Sources */,
 				BC11F74B244C8E0500734F60 /* SceneDelegate.swift in Sources */,
+				BC11F765244D735500734F60 /* TableViewCell(Delete).swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

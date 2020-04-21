@@ -13,8 +13,8 @@ class Museum {
     var name: String
     var city: String
     
-    init(imageName: String, name: String, city: String) {
-        self.imageName = imageName
+    init(name: String, city: String) {
+        self.imageName = name.filter {!$0.isWhitespace} + ".jpg"
         self.name = name
         self.city = city
     }
