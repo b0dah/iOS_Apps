@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let a = 2
-        self.responseLabel.text = a
+//        self.responseLabel.text =
         
         let width: CGFloat = self.orangeView.bounds.width
         print("width = ", width)

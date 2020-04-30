@@ -17,8 +17,8 @@ class MyViewController : UIViewController {
         let squareView = UIView(frame: squareFrame)
         squareView.backgroundColor = .black
         view.addSubview(squareView)
-//
-//        // new view animation
+
+       // MARK: - view animation
 //        UIView.animate(withDuration: 3.0, animations: {
 //            squareView.backgroundColor = .orange
 //            squareView.frame = CGRect(x: 150, y: 150, width: 100, height: 100)
@@ -29,16 +29,16 @@ class MyViewController : UIViewController {
 //            squareView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
 //        })
         
-        // Transform animation
+        // MARK: - Transform view animation
         UIView.animate(withDuration: 2.0, animations:  {
             squareView.backgroundColor = .orange
-            
+
             let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
             let rotateTransform = CGAffineTransform(rotationAngle: .pi*(-1))
             let translateTransform = CGAffineTransform(translationX: 200, y: 200)
-            
+
             let comboTransform = scaleTransform.concatenating(rotateTransform).concatenating(translateTransform)
-            
+
             squareView.transform = comboTransform
         })
         {
