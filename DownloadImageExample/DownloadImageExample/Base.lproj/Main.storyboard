@@ -22,23 +22,29 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="dn3-mc-x65"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="NTB-Mz-gNz">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1y0-GF-0bb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="233.5" id="Lc6-W1-Z0k"/>
                             <constraint firstItem="1y0-GF-0bb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87.5" id="dBa-Kg-TM0"/>
                             <constraint firstItem="1y0-GF-0bb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gEV-it-JYq"/>
+                            <constraint firstItem="NTB-Mz-gNz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jEP-DO-HHr"/>
+                            <constraint firstItem="NTB-Mz-gNz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tKe-Np-Dhg"/>
                             <constraint firstItem="1y0-GF-0bb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v3d-Cp-llR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="1y0-GF-0bb" id="BXD-2T-2y2"/>
+                        <outlet property="loadingIndicator" destination="NTB-Mz-gNz" id="FuC-0K-FCn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="138.40000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     let url = URL(string: "http://IvansMacBookPro.local:8000/static/museum_logos/AfriartGallery.jpg")!
     
@@ -17,9 +18,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         downloadImage(from: url)
+        loadingIndicator.hidesWhenStopped = true
+        view.backgroundColor = .red
     }
 
     func downloadImage(from url: URL) {
+        loadingIndicator.startAnimating()
         print("download started")
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -32,6 +36,7 @@ class ViewController: UIViewController {
             print("download finished")
             
             DispatchQueue.main.async {
+                self.loadingIndicator.stopAnimating()
                 self.imageView.image = UIImage(data: data)
             }
         }.resume()
