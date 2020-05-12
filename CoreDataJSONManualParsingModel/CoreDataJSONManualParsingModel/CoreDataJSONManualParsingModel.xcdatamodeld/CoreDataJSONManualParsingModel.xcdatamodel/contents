@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Painting" representedClassName="Painting" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PaintingWrapper" representedClassName="PaintingWrapper" syncable="YES">
+        <relationship name="paintings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Painting"/>
+    </entity>
+    <elements>
+        <element name="PaintingWrapper" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Painting" positionX="-54" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>

@@ -1,0 +1,58 @@
+{
+    "paintings": [
+        {
+            "id": 1,
+            "title": "The World is Flat",
+            "year": 1975,
+            "description": "Nick comments: \"In the beginning, I always felt I couldn't remake the world but I would like to try. I didn't know how so I tried different ways. I am still doing that. I am not that focused. I go out to paint. I look for something to paint. All these ideas stay in the background, out of sight, until I am through painting. I get ideas from the act of painting and it guides me either into a dogma or chaos. All my paintings start from what is seen. The painting marries in different ways and set up its own laws, which I try to deduce and follow. The awareness did not change the painting. The conclusions of the finished piece changed the process of translating the seen.\"",
+            "genre": "Painterly",
+            "imageTitle": "TheWorldisFlat.jpg",
+            "physicalWidth": 0.15,
+            "physicalHeight": 0.15,
+            "museumId": 1,
+            "author": {
+                "id": 1,
+                "name": "George Nick",
+                "yearsOfLife": "1927",
+                "country": "United States",
+                "portraitImageTitle": "George Nick.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "title": "Peaceful Sight",
+            "year": 2008,
+            "description": "Russian painter's sight",
+            "genre": "Painterly",
+            "imageTitle": "PeacefulSight.jpg",
+            "physicalWidth": 0.48,
+            "physicalHeight": 0.42,
+            "museumId": 1,
+            "author": {
+                "id": 2,
+                "name": "Ivan Royalsurnameholder",
+                "yearsOfLife": "1998 - u.n.",
+                "country": "Russia",
+                "portraitImageTitle": "CHANGE"
+            }
+        },
+        {
+            "id": 4,
+            "title": "Painting",
+            "year": 2008,
+            "description": "Some description",
+            "genre": "Painterly",
+            "imageTitle": "Painting.jpg",
+            "physicalWidth": 0.32,
+            "physicalHeight": 0.21,
+            "museumId": 1,
+            "author": {
+                "id": 2,
+                "name": "Ivan Royalsurnameholder",
+                "yearsOfLife": "1998 - u.n.",
+                "country": "Russia",
+                "portraitImageTitle": "CHANGE"
+            }
+        }
+    ]
+}
