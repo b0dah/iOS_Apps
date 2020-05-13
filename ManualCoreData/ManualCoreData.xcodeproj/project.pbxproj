@@ -16,6 +16,7 @@
 		BC06A2CB246963310026A6C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC06A2C9246963310026A6C8 /* LaunchScreen.storyboard */; };
 		BC06A2D3246963C00026A6C8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06A2D2246963C00026A6C8 /* APIService.swift */; };
 		BC06A2DA2469E4330026A6C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06A2D92469E4330026A6C8 /* CoreDataManager.swift */; };
+		BC45E706246B24FE0045E0F9 /* Painting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45E705246B24FE0045E0F9 /* Painting+CoreDataProperties.swift */; };
 		BC6834F72469F5AF0046C64C /* Painting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6834F52469F5AF0046C64C /* Painting+CoreDataClass.swift */; };
 		BC6834F82469F5AF0046C64C /* Painting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6834F62469F5AF0046C64C /* Painting+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		BC06A2CC246963310026A6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC06A2D2246963C00026A6C8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BC06A2D92469E4330026A6C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BC45E705246B24FE0045E0F9 /* Painting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Painting+CoreDataProperties.swift"; path = "ManualCoreData/Models/Painting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC6834F52469F5AF0046C64C /* Painting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Painting+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BC6834F62469F5AF0046C64C /* Painting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Painting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +52,7 @@
 		BC06A2AF2469632F0026A6C8 = {
 			isa = PBXGroup;
 			children = (
+				BC45E705246B24FE0045E0F9 /* Painting+CoreDataProperties.swift */,
 				BC06A2BA2469632F0026A6C8 /* ManualCoreData */,
 				BC06A2B92469632F0026A6C8 /* Products */,
 			);
@@ -179,6 +182,7 @@
 			files = (
 				BC6834F72469F5AF0046C64C /* Painting+CoreDataClass.swift in Sources */,
 				BC06A2C62469632F0026A6C8 /* ManualCoreData.xcdatamodeld in Sources */,
+				BC45E706246B24FE0045E0F9 /* Painting+CoreDataProperties.swift in Sources */,
 				BC06A2D3246963C00026A6C8 /* APIService.swift in Sources */,
 				BC6834F82469F5AF0046C64C /* Painting+CoreDataProperties.swift in Sources */,
 				BC06A2C02469632F0026A6C8 /* ViewController.swift in Sources */,

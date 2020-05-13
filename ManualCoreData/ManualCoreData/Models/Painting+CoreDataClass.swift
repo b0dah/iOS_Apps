@@ -12,5 +12,4 @@ import CoreData
 
 @objc(Painting)
 public class Painting: NSManagedObject {
-
 }

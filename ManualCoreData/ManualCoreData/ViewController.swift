@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
     
-    var paintings: [NSManagedObject] = []
+    var paintings: [Painting] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +23,11 @@ class ViewController: UIViewController {
             switch (result) {
                 case .success(let data):
                     self.saveInCoreData(array: data)
-                    print(data)
                     self.fetchFromCoreData()
                 case .error(let message):
                     print(message)
             }
         }
-//        fetchFromCoreData()
-//        print(paintings.count)
-        
-        if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
-                print(url.absoluteString)
-            }
         
     }
 
@@ -52,15 +46,32 @@ class ViewController: UIViewController {
     private func createPaintingEntity(dictionary: [String: AnyObject]) -> NSManagedObject? {
         let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
         
-        if let paintingEntity = NSEntityDescription.entity(forEntityName: "Painting", in: context) as? Painting {
-            /*!*/paintingEntity.id = (dictionary["id"] as? Int32)!
-            paintingEntity.title = dictionary["title"] as? String
+//        if let paintingEntity = NSEntityDescription.entity(forEntityName: "Painting", in: context) {
+//            as? Painting {
+//            /*!*/paintingEntity.id = (dictionary["id"] as? Int32)!
+//            paintingEntity.title = dictionary["title"] as? String
             
-            return paintingEntity
+            //1
+//            let painting = NSManagedObject(entity: paintingEntity, insertInto: context)
+//            painting.setValue(dictionary["id"], forKey: "id")
+//            painting.setValue(dictionary["title"], forKey: "title")
+            
+            //2
+            let painting = Painting(context: context)
+            painting.id = 100
+            painting.title = "100"
+            
+        if let imageData = UIImage(named: "image")?.jpegData(compressionQuality: 1.0) {
+            print("image's here")
+            painting.image = imageData
+        } else {
+            print("no such image in bundle")
         }
+            
+        return painting
         
-        print("no entity")
-        return nil
+//        print("no entity")
+//        return nil
     }
     
     
@@ -72,11 +83,32 @@ class ViewController: UIViewController {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         
         do {
-            try paintings = context.fetch(fetchRequest)
+            try paintings = context.fetch(fetchRequest) as? [Painting] ?? []
             print("fetched \(paintings.count)")
         } catch let error as NSError {
             print("Couldn't fetch \(error) \(error.userInfo)")
         }
+        
+//        DispatchQueue.main.async {
+            guard let imageField = self.paintings[0].image else {
+                print("Field is null")
+                print(paintings.count)
+                return
+            }
+            
+            guard let imageData = self.paintings[0].image else {
+                print("no imagedata")
+                return
+            }
+            
+            guard let image = UIImage(data: imageData) else {
+                print("nah image")
+                return
+            }
+                
+            self.imageView.image = image
+            
+//        }
     }
 
 }
