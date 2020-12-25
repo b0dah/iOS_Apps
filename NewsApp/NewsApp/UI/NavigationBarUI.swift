@@ -17,8 +17,7 @@ extension MainViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.searchController = searchController
-        navigationController?.navigationBar.backgroundColor = .green
-        
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 51/255, green: 153/255, blue: 102/255, alpha: 1)
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 34)!

@@ -82,7 +82,6 @@ class ViewController: UIViewController {
         
         do {
             try people = managedContext.fetch(fetchRequest)
-
         } catch let error as NSError {
             print("Couldn't fetch \(error) \(error.userInfo)")
         }

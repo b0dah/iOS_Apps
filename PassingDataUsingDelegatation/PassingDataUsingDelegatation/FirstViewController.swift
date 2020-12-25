@@ -8,7 +8,15 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, DataSendingDelegateProtocol {
+/*
+1. Создаем протокол с методом передачи данных
+2. Реализуем проктоол первым Контроллером
+3. Во втором Контроллере создаем свойство delegate типа Протокола
+4. В сегвее передаем текущий Контроллер как значение свойства delegate
+5. По нажатию на кнопку закрываем Второй Контроллер (текущий) и вызываем метод делегата на передачу(в данном случае отображение) данных.
+ */
+
+class FirstViewController: UIViewController, /* STEP #1 -> */ DataSendingDelegateProtocol {
     @IBOutlet weak var receivedDataLabel: UILabel!
     @IBAction func getDataButtonClicked(_ sender: UIButton) {
     }
@@ -27,7 +35,7 @@ class FirstViewController: UIViewController, DataSendingDelegateProtocol {
         }
         
         if let secondViewController = segue.destination as? SecondViewController {
-            secondViewController.delegate = self
+            secondViewController.delegate = self /* STEP #2 */
         }
     }
     

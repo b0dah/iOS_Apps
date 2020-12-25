@@ -2,7 +2,7 @@
 //  Painting+CoreDataProperties.swift
 //  ManualCoreData
 //
-//  Created by Иван Романов on 12.05.2020.
+//  Created by Иван Романов on 13.05.2020.
 //  Copyright © 2020 Иван Романов. All rights reserved.
 //
 //
@@ -18,7 +18,8 @@ extension Painting {
     }
 
     @NSManaged public var id: Int32
-    @NSManaged public var title: String?
     @NSManaged public var image: Data?
+    @NSManaged public var title: String?
+    @NSManaged public var author: Artist?
 
 }

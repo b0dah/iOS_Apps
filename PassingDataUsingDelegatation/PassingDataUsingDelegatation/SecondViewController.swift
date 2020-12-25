@@ -12,7 +12,6 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var dataToSendTextField: UITextField!
     
-    
     var delegate: DataSendingDelegateProtocol? = nil
     
     override func viewDidLoad() {
@@ -26,7 +25,7 @@ class SecondViewController: UIViewController {
         }
         
         if let dataToBeSent = dataToSendTextField.text {
-            self.delegate?.sendData(data: dataToBeSent)
+            self.delegate?.sendData(data: dataToBeSent) // STEP #3
             dismiss(animated: true, completion: nil)
         }
     }

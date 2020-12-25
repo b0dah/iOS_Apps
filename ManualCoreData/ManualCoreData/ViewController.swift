@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+        if let count = getNumberOfPaintingsForMuseum(title: "Painting", context: context) {
+            print("number of such rows : \(count)")
+        } else {
+            print("request failed")
+        }
+        
         let service = APIService()
         service.retrieveDataWith {
             (result) in
@@ -45,29 +52,38 @@ class ViewController: UIViewController {
     
     private func createPaintingEntity(dictionary: [String: AnyObject]) -> NSManagedObject? {
         let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
-        
-//        if let paintingEntity = NSEntityDescription.entity(forEntityName: "Painting", in: context) {
-//            as? Painting {
-//            /*!*/paintingEntity.id = (dictionary["id"] as? Int32)!
-//            paintingEntity.title = dictionary["title"] as? String
             
-            //1
-//            let painting = NSManagedObject(entity: paintingEntity, insertInto: context)
-//            painting.setValue(dictionary["id"], forKey: "id")
-//            painting.setValue(dictionary["title"], forKey: "title")
+        //2
+        let painting = Painting(context: context)
+
+        if let id = dictionary[PaintingKeys.id] as? Int32, let title = dictionary[PaintingKeys.title] as? String {
+            painting.id = id
+            painting.title = title
             
-            //2
-            let painting = Painting(context: context)
-            painting.id = 100
-            painting.title = "100"
+            if let artist = NSEntityDescription.insertNewObject(forEntityName: "Artist", into: context) as? Artist, let authorField = dictionary["author"] as? AnyObject, let id = authorField["id"] as? Int32, let name = authorField["name"] as? String {
+                artist.id = id
+                artist.name = name
+                painting.author = artist
+            }
+            else {
+                print("Artist errooor")
+            }
             
-        if let imageData = UIImage(named: "image")?.jpegData(compressionQuality: 1.0) {
-            print("image's here")
-            painting.image = imageData
         } else {
-            print("no such image in bundle")
+            print("Painging Casting error")
         }
+
             
+//        if let imageData = UIImage(named: "image")?.jpegData(compressionQuality: 1.0) {
+//            print("image's here")
+//            painting.image = imageData
+//        } else {
+//            print("no such image in bundle")
+//        }
+        
+
+      
+        
         return painting
         
 //        print("no entity")
@@ -107,8 +123,22 @@ class ViewController: UIViewController {
             }
                 
             self.imageView.image = image
+        print(paintings.last?.author?.name)
             
 //        }
+    }
+    
+    func getNumberOfPaintingsForMuseum(title: String, context: NSManagedObjectContext) -> Int? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Painting")
+        request.predicate = NSPredicate(format: "ANY title = %@", title)
+        
+        do {
+            let count = try context.count(for: request)
+            return count
+        } catch let error as NSError {
+            print("Error counting rows in CoreData \(error.userInfo)")
+            return nil
+        }
     }
 
 }
